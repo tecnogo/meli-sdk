@@ -1,0 +1,110 @@
+{
+  "id": "MLA403963",
+  "name": "Kawasaki",
+  "picture": null,
+  "permalink": null,
+  "total_items_in_this_category": 160,
+  "path_from_root": [
+    {
+      "id": "MLA1743",
+      "name": "Autos, Motos y Otros"
+    },
+    {
+      "id": "MLA1763",
+      "name": "Motos"
+    },
+    {
+      "id": "MLA403947",
+      "name": "Enduro"
+    },
+    {
+      "id": "MLA403963",
+      "name": "Kawasaki"
+    }
+  ],
+  "children_categories": [
+    {
+      "id": "MLA407271",
+      "name": "KLR 650",
+      "total_items_in_this_category": 70
+    },
+    {
+      "id": "MLA404743",
+      "name": "KLX 125",
+      "total_items_in_this_category": 1
+    },
+    {
+      "id": "MLA404744",
+      "name": "KLX 250",
+      "total_items_in_this_category": 12
+    },
+    {
+      "id": "MLA404745",
+      "name": "KLX 450R",
+      "total_items_in_this_category": 16
+    },
+    {
+      "id": "MLA404746",
+      "name": "Otros Modelos",
+      "total_items_in_this_category": 61
+    }
+  ],
+  "attribute_types": "attributes",
+  "settings": {
+    "adult_content": false,
+    "buying_allowed": false,
+    "buying_modes": [
+      "classified"
+    ],
+    "catalog_domain": "MLA-MOTORCYCLES",
+    "coverage_areas": "not_allowed",
+    "currencies": [
+      "USD",
+      "ARS"
+    ],
+    "fragile": false,
+    "immediate_payment": "optional",
+    "item_conditions": [
+      "used",
+      "not_specified",
+      "new"
+    ],
+    "items_reviews_allowed": false,
+    "listing_allowed": false,
+    "max_description_length": 50000,
+    "max_pictures_per_item": 15,
+    "max_pictures_per_item_var": 6,
+    "max_sub_title_length": 70,
+    "max_title_length": 60,
+    "maximum_price": null,
+    "minimum_price": null,
+    "mirror_category": null,
+    "mirror_master_category": null,
+    "mirror_slave_categories": [
+    ],
+    "price": "required",
+    "reservation_allowed": "mandatory",
+    "restrictions": [
+    ],
+    "rounded_address": false,
+    "seller_contact": "optional",
+    "shipping_modes": [
+      "not_specified",
+      "custom"
+    ],
+    "shipping_options": [
+    ],
+    "shipping_profile": "not_allowed",
+    "show_contact_information": true,
+    "simple_shipping": "not_allowed",
+    "stock": "required",
+    "sub_vertical": "motorcycles",
+    "subscribable": false,
+    "tags": [
+    ],
+    "vertical": "motors",
+    "vip_subdomain": "moto"
+  },
+  "meta_categ_id": 5727,
+  "attributable": false
+}

@@ -1,0 +1,8 @@
+{
+  "access_token": "APP_USR-6092-9999999-cb45c82853f6e620bb0deda096b128d3-8035443",
+  "token_type": "bearer",
+  "expires_in": 21600,
+  "scope": "offline_access read write",
+  "user_id": 9999999,
+  "refresh_token": "TG-5ca5ed0d2020870006761c21-136244363"
+}

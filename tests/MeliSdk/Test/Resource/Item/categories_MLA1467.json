@@ -1,0 +1,81 @@
+{
+  "id": "MLA1467",
+  "name": "Alquiler",
+  "picture": null,
+  "permalink": null,
+  "total_items_in_this_category": 6337,
+  "path_from_root": [
+    {
+      "id": "MLA1459",
+      "name": "Inmuebles"
+    },
+    {
+      "id": "MLA1466",
+      "name": "Casas"
+    },
+    {
+      "id": "MLA1467",
+      "name": "Alquiler"
+    }
+  ],
+  "children_categories": [
+  ],
+  "attribute_types": "attributes",
+  "settings": {
+    "adult_content": false,
+    "buying_allowed": false,
+    "buying_modes": [
+      "classified"
+    ],
+    "catalog_domain": "MLA-HOUSES_FOR_RENT",
+    "coverage_areas": "not_allowed",
+    "currencies": [
+      "USD",
+      "ARS"
+    ],
+    "fragile": false,
+    "immediate_payment": "optional",
+    "item_conditions": [
+      "used",
+      "not_specified",
+      "new"
+    ],
+    "items_reviews_allowed": false,
+    "listing_allowed": true,
+    "max_description_length": 50000,
+    "max_pictures_per_item": 30,
+    "max_pictures_per_item_var": 6,
+    "max_sub_title_length": 70,
+    "max_title_length": 200,
+    "maximum_price": 5000000,
+    "minimum_price": 400,
+    "mirror_category": null,
+    "mirror_master_category": null,
+    "mirror_slave_categories": [
+    ],
+    "price": "required",
+    "reservation_allowed": "not_allowed",
+    "restrictions": [
+    ],
+    "rounded_address": false,
+    "seller_contact": "optional",
+    "shipping_modes": [
+      "custom",
+      "not_specified"
+    ],
+    "shipping_options": [
+    ],
+    "shipping_profile": "not_allowed",
+    "show_contact_information": true,
+    "simple_shipping": "not_allowed",
+    "stock": "required",
+    "sub_vertical": "properties",
+    "subscribable": false,
+    "tags": [
+    ],
+    "vertical": "real_estate",
+    "vip_subdomain": "casa"
+  },
+  "meta_categ_id": 12620,
+  "attributable": false
+}

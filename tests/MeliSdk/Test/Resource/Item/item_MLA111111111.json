@@ -1,0 +1,417 @@
+{
+  "id": "MLA111111111",
+  "site_id": "MLA",
+  "title": "Casa En Venta En Springfield Calle Falsa 123",
+  "subtitle": null,
+  "seller_id": 199999999,
+  "category_id": "MLA1467",
+  "official_store_id": null,
+  "price": 15000,
+  "base_price": 15000,
+  "original_price": null,
+  "currency_id": "ARS",
+  "initial_quantity": 1,
+  "available_quantity": 1,
+  "sold_quantity": 0,
+  "sale_terms": [
+  ],
+  "buying_mode": "classified",
+  "listing_type_id": "silver",
+  "start_time": "2019-02-06T13:53:28.000Z",
+  "stop_time": "2019-04-09T10:16:13.000Z",
+  "condition": "used",
+  "permalink": "https://casa.mercadolibre.com.ar/MLA-111111111-casa-en-venta-en-springfield-calle-falsa-123-_JM",
+  "thumbnail": "http://mla-s1-p.mlstatic.com/997294-MLA29346196348_022019-I.jpg",
+  "secure_thumbnail": "https://mla-s1-p.mlstatic.com/997294-MLA29346196348_022019-I.jpg",
+  "pictures": [],
+  "video_id": null,
+  "descriptions": [],
+  "accepts_mercadopago": false,
+  "non_mercado_pago_payment_methods": [
+  ],
+  "shipping": {},
+  "international_delivery_mode": "none",
+  "seller_address": {},
+  "seller_contact": {},
+  "location": {},
+  "geolocation": {},
+  "coverage_areas": [
+  ],
+  "attributes": [
+    {
+      "id": "HAS_ATTIC",
+      "name": "Altillo",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "HAS_BALCONY",
+      "name": "Balcón",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "HAS_DINNING_ROOM",
+      "name": "Comedor",
+      "value_id": "242085",
+      "value_name": "Sí",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "HAS_DRESSING_ROOM",
+      "name": "Vestidor",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "HAS_GARDEN",
+      "name": "Jardín",
+      "value_id": "242085",
+      "value_name": "Sí",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "HAS_GRILL",
+      "name": "Parrilla",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "HAS_HALF_BATH",
+      "name": "Toilette",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "HAS_KITCHEN",
+      "name": "Cocina",
+      "value_id": "242085",
+      "value_name": "Sí",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "HAS_LIVING_ROOM",
+      "name": "Living",
+      "value_id": "242085",
+      "value_name": "Sí",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "HAS_MAID_ROOM",
+      "name": "Dependencia de servicio",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "HAS_PATIO",
+      "name": "Patio",
+      "value_id": "242085",
+      "value_name": "Sí",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "HAS_PLAYROOM",
+      "name": "Playroom",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "HAS_STUDY",
+      "name": "Estudio",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "HAS_TERRACE",
+      "name": "Terraza",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "AMBIENTES",
+      "attribute_group_name": "Ambientes"
+    },
+    {
+      "id": "FURNISHED",
+      "name": "Amoblado",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "CARACTERISTICAS",
+      "attribute_group_name": "Características adicionales"
+    },
+    {
+      "id": "HAS_ALARM",
+      "name": "Alarma",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "CARACTERISTICAS",
+      "attribute_group_name": "Características adicionales"
+    },
+    {
+      "id": "HAS_TELEPHONE_LINE",
+      "name": "Línea telefónica",
+      "value_id": "242085",
+      "value_name": "Sí",
+      "value_struct": null,
+      "attribute_group_id": "CARACTERISTICAS",
+      "attribute_group_name": "Características adicionales"
+    },
+    {
+      "id": "PROFESSIONAL_USE_ALLOWED",
+      "name": "Apto profesional",
+      "value_id": "242085",
+      "value_name": "Sí",
+      "value_struct": null,
+      "attribute_group_id": "CARACTERISTICAS",
+      "attribute_group_name": "Características adicionales"
+    },
+    {
+      "id": "HAS_AIR_CONDITIONING",
+      "name": "Aire acondicionado",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "COMOYAMEN",
+      "attribute_group_name": "Comodidades y amenities"
+    },
+    {
+      "id": "HAS_HEATING",
+      "name": "Calefacción",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "COMOYAMEN",
+      "attribute_group_name": "Comodidades y amenities"
+    },
+    {
+      "id": "HAS_INTERNET_ACCESS",
+      "name": "Acceso a internet",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "COMOYAMEN",
+      "attribute_group_name": "Comodidades y amenities"
+    },
+    {
+      "id": "HAS_SECURITY",
+      "name": "Seguridad",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "COMOYAMEN",
+      "attribute_group_name": "Comodidades y amenities"
+    },
+    {
+      "id": "HAS_SWIMMING_POOL",
+      "name": "Pileta",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "COMOYAMEN",
+      "attribute_group_name": "Comodidades y amenities"
+    },
+    {
+      "id": "BEDROOMS",
+      "name": "Dormitorios",
+      "value_id": null,
+      "value_name": "2",
+      "value_struct": null,
+      "attribute_group_id": "FIND",
+      "attribute_group_name": "Ficha técnica"
+    },
+    {
+      "id": "COVERED_AREA",
+      "name": "Superficie cubierta",
+      "value_id": null,
+      "value_name": "133 m²",
+      "value_struct": {
+        "number": 133,
+        "unit": "m²"
+      },
+      "attribute_group_id": "FIND",
+      "attribute_group_name": "Ficha técnica"
+    },
+    {
+      "id": "FLOORS",
+      "name": "Pisos",
+      "value_id": null,
+      "value_name": "0",
+      "value_struct": null,
+      "attribute_group_id": "FIND",
+      "attribute_group_name": "Ficha técnica"
+    },
+    {
+      "id": "FULL_BATHROOMS",
+      "name": "Baños",
+      "value_id": null,
+      "value_name": "1",
+      "value_struct": null,
+      "attribute_group_id": "FIND",
+      "attribute_group_name": "Ficha técnica"
+    },
+    {
+      "id": "MAINTENANCE_FEE",
+      "name": "Expensas",
+      "value_id": null,
+      "value_name": "0 ARS",
+      "value_struct": {
+        "number": 0,
+        "unit": "ARS"
+      },
+      "attribute_group_id": "FIND",
+      "attribute_group_name": "Ficha técnica"
+    },
+    {
+      "id": "PARKING_LOTS",
+      "name": "Cocheras",
+      "value_id": null,
+      "value_name": "1",
+      "value_struct": null,
+      "attribute_group_id": "FIND",
+      "attribute_group_name": "Ficha técnica"
+    },
+    {
+      "id": "PROPERTY_AGE",
+      "name": "Antigüedad",
+      "value_id": null,
+      "value_name": "35 años",
+      "value_struct": {
+        "number": 35,
+        "unit": "años"
+      },
+      "attribute_group_id": "FIND",
+      "attribute_group_name": "Ficha técnica"
+    },
+    {
+      "id": "ROOMS",
+      "name": "Ambientes",
+      "value_id": null,
+      "value_name": "3",
+      "value_struct": null,
+      "attribute_group_id": "FIND",
+      "attribute_group_name": "Ficha técnica"
+    },
+    {
+      "id": "TOTAL_AREA",
+      "name": "Superficie total",
+      "value_id": null,
+      "value_name": "500 m²",
+      "value_struct": {
+        "number": 500,
+        "unit": "m²"
+      },
+      "attribute_group_id": "FIND",
+      "attribute_group_name": "Ficha técnica"
+    },
+    {
+      "id": "OPERATION",
+      "name": "Operación",
+      "value_id": "242073",
+      "value_name": "Alquiler",
+      "value_struct": null,
+      "attribute_group_id": "MAIN",
+      "attribute_group_name": "Principales"
+    },
+    {
+      "id": "PROPERTY_TYPE",
+      "name": "Inmueble",
+      "value_id": "242060",
+      "value_name": "Casa",
+      "value_struct": null,
+      "attribute_group_id": "MAIN",
+      "attribute_group_name": "Principales"
+    },
+    {
+      "id": "HAS_CABLE_TV",
+      "name": "TV por cable",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "OTHERS",
+      "attribute_group_name": "Otros"
+    },
+    {
+      "id": "HAS_JACUZZI",
+      "name": "Jacuzzi",
+      "value_id": "242084",
+      "value_name": "No",
+      "value_struct": null,
+      "attribute_group_id": "OTHERS",
+      "attribute_group_name": "Otros"
+    },
+    {
+      "id": "HAS_LAUNDRY",
+      "name": "Lavadero",
+      "value_id": "242085",
+      "value_name": "Sí",
+      "value_struct": null,
+      "attribute_group_id": "OTHERS",
+      "attribute_group_name": "Otros"
+    },
+    {
+      "id": "ITEM_CONDITION",
+      "name": "Condición del ítem",
+      "value_id": "2230581",
+      "value_name": "Usado",
+      "value_struct": null,
+      "attribute_group_id": "OTHERS",
+      "attribute_group_name": "Otros"
+    }
+  ],
+  "warnings": [
+  ],
+  "listing_source": "",
+  "variations": [
+  ],
+  "status": "active",
+  "sub_status": [
+  ],
+  "tags": [
+  ],
+  "warranty": null,
+  "catalog_product_id": null,
+  "domain_id": "MLA-HOUSES_FOR_RENT",
+  "parent_item_id": null,
+  "differential_pricing": null,
+  "deal_ids": [
+  ],
+  "automatic_relist": false,
+  "date_created": "2019-02-06T13:53:29.000Z",
+  "last_updated": "2019-03-26T12:38:15.503Z",
+  "health": null
+}

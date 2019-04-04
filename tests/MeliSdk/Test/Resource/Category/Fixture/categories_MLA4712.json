@@ -1,0 +1,85 @@
+{
+  "id": "MLA4712",
+  "name": "Cascos",
+  "picture": "http://resources.mlstatic.com/category/images/3e764793-d94e-4131-a875-e94e7ddced50.png",
+  "permalink": null,
+  "total_items_in_this_category": 30066,
+  "path_from_root": [
+    {
+      "id": "MLA5725",
+      "name": "Accesorios para Vehículos"
+    },
+    {
+      "id": "MLA4711",
+      "name": "Acc. para Motos y Cuatriciclos"
+    },
+    {
+      "id": "MLA4712",
+      "name": "Cascos"
+    }
+  ],
+  "children_categories": [
+  ],
+  "attribute_types": "variations",
+  "settings": {
+    "adult_content": false,
+    "buying_allowed": true,
+    "buying_modes": [
+      "auction",
+      "buy_it_now"
+    ],
+    "catalog_domain": "MLA-MOTORCYCLE_HELMETS",
+    "coverage_areas": "not_allowed",
+    "currencies": [
+      "ARS"
+    ],
+    "fragile": false,
+    "immediate_payment": "required",
+    "item_conditions": [
+      "used",
+      "not_specified",
+      "new"
+    ],
+    "items_reviews_allowed": false,
+    "listing_allowed": true,
+    "max_description_length": 50000,
+    "max_pictures_per_item": 72,
+    "max_pictures_per_item_var": 10,
+    "max_sub_title_length": 70,
+    "max_title_length": 60,
+    "maximum_price": null,
+    "minimum_price": null,
+    "mirror_category": null,
+    "mirror_master_category": null,
+    "mirror_slave_categories": [
+    ],
+    "price": "required",
+    "reservation_allowed": "not_allowed",
+    "restrictions": [
+    ],
+    "rounded_address": false,
+    "seller_contact": "not_allowed",
+    "shipping_modes": [
+      "custom",
+      "not_specified",
+      "me1",
+      "me2"
+    ],
+    "shipping_options": [
+      "carrier",
+      "custom"
+    ],
+    "shipping_profile": "optional",
+    "show_contact_information": false,
+    "simple_shipping": "optional",
+    "stock": "required",
+    "sub_vertical": "motorcycle_accesories",
+    "subscribable": false,
+    "tags": [
+    ],
+    "vertical": "vehicle_parts_accessories",
+    "vip_subdomain": "articulo"
+  },
+  "meta_categ_id": null,
+  "attributable": false
+}

@@ -1,0 +1,6 @@
+{
+  "message": "credenciales inv&aacute;lidas",
+  "error": "invalid_client",
+  "status": 400,
+  "cause": []
+}

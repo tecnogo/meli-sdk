@@ -1,0 +1,36 @@
+{
+  "path_from_root": [
+    {
+      "name": "Autos, Motos y Otros",
+      "id": "MLA1743",
+      "prediction_probability": 0.8424855338
+    },
+    {
+      "name": "Motos",
+      "id": "MLA1763",
+      "prediction_probability": 0.8225254918
+    },
+    {
+      "name": "Enduro",
+      "id": "MLA403947",
+      "prediction_probability": 0.411462212
+    },
+    {
+      "name": "Kawasaki",
+      "id": "MLA403963",
+      "prediction_probability": 0.411462213
+    },
+    {
+      "name": "KLR 650",
+      "id": "MLA407271",
+      "prediction_probability": 0.411462214
+    }
+  ],
+  "shipping_modes": [
+    "not_specified",
+    "custom"
+  ],
+  "name": "KLR 650",
+  "prediction_probability": 0.411462214,
+  "id": "MLA407271"
+}

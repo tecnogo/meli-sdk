@@ -29,5 +29,6 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0"
-    }
+    },
+    "license": "GPLv3"
 }

@@ -1,5 +1,5 @@
 {
-    "name": "tecnogo/melisdk",
+    "name": "tecnogo/meli-sdk",
     "description": "A better SDK for Mercadolibre API",
     "homepage": "https://www.tecnogo.com",
     "keywords": ["sdk", "mercadolibre", "api"],

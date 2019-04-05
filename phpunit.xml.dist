@@ -8,7 +8,7 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false"
->
+         bootstrap="./vendor/autoload.php">
     <testsuites>
         <testsuite name="MeliSdk">
             <directory>./tests/MeliSdk</directory>

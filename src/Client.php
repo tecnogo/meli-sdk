@@ -174,6 +174,18 @@ final class Client
     }
 
     /**
+     * @return \Tecnogo\MeliSdk\Entity\LoggedUser\BookmarkCollection
+     * @throws ContainerException
+     * @throws Exception\MissingConfigurationException
+     * @throws Request\Exception\RequestException
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
+    public function bookmarks()
+    {
+        return $this->loggedUser()->bookmarks();
+    }
+
+    /**
      * @param string $search
      * @return \Tecnogo\MeliSdk\Entity\Category\CategoryPrediction
      * @throws ContainerException

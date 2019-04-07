@@ -46,7 +46,7 @@ class GetItemTest extends AbstractResourceTest
     {
         $client = $this->getClientWithFixedGetResponse(
             200,
-            file_get_contents(__DIR__ . '/item_MLA111111111.json')
+            file_get_contents(__DIR__ . '/Fixture/item_MLA111111111.json')
         );
 
         $item = $client->item('MLA111111111');
@@ -77,7 +77,7 @@ class GetItemTest extends AbstractResourceTest
     {
         $client = $this->getClientWithFixedGetResponse(
             200,
-            file_get_contents(__DIR__ . '/item_MLA111111111.json')
+            file_get_contents(__DIR__ . '/Fixture/item_MLA111111111.json')
         );
 
         $attributes = $client->item('MLA111111111')->attributes();
@@ -161,8 +161,8 @@ class GetItemTest extends AbstractResourceTest
     public function testItemCategory()
     {
         $client = $this->getClientWithMapGetResponse([
-            'item/MLA111111111' => [200, file_get_contents(__DIR__ . '/item_MLA111111111.json')],
-            'categories/MLA1467' => [200, file_get_contents(__DIR__ . '/categories_MLA1467.json')],
+            'item/MLA111111111' => [200, file_get_contents(__DIR__ . '/Fixture/item_MLA111111111.json')],
+            'categories/MLA1467' => [200, file_get_contents(__DIR__ . '/Fixture/categories_MLA1467.json')],
         ]);
 
         $item = $attributes = $client->item('MLA111111111');

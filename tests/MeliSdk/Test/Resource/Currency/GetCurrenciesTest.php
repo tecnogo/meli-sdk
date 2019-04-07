@@ -17,12 +17,7 @@ class GetCurrenciesTest extends AbstractResourceTest
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      */
     protected function triggerRequestForErrorResponses(Client $client)
     {
@@ -34,12 +29,7 @@ class GetCurrenciesTest extends AbstractResourceTest
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      */
     public function testGetCurrencies()
@@ -65,12 +55,7 @@ class GetCurrenciesTest extends AbstractResourceTest
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      */
     public function testRequestCache()

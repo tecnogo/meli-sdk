@@ -29,7 +29,7 @@ final class Item extends AbstractEntity
      */
     public function id()
     {
-        return $this->get('id');
+        return $this->id ?? $this->get('id');
     }
 
     /**

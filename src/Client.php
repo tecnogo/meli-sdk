@@ -215,6 +215,7 @@ final class Client
     private function lazyEntity($entity, $action, $id)
     {
         return $this->make($entity, [
+            'id' => $id,
             'source' => function () use ($action, $id) {
                 return $this->exec($action, ['id' => $id]);
             }

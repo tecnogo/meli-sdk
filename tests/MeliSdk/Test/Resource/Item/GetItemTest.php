@@ -8,11 +8,13 @@ use Tecnogo\MeliSdk\Entity\Item\Attribute;
 use Tecnogo\MeliSdk\Entity\Item\AttributeCollection;
 use Tecnogo\MeliSdk\Entity\Item\Item;
 use Tecnogo\MeliSdk\Test\Resource\AbstractResourceTest;
+use Tecnogo\MeliSdk\Test\Resource\CreateCallbackResponseGetRequest;
 use Tecnogo\MeliSdk\Test\Resource\CreateMapResponseGetRequest;
 
 class GetItemTest extends AbstractResourceTest
 {
     use CreateMapResponseGetRequest;
+    use CreateCallbackResponseGetRequest;
 
     /**
      * @param Client $client
@@ -29,6 +31,27 @@ class GetItemTest extends AbstractResourceTest
     /**
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     */
+    public function testCreationWithIdDoesNotTriggerRequest()
+    {
+        $client = $this->getClientWithCallbackGetResponse(function () {
+            throw new \Exception('request_triggered');
+        });
+
+        $item = $client->item('MLA111111112');
+
+        $this->assertEquals($item->id(), 'MLA111111112');
+
+        $this->expectExceptionMessage('request_triggered');
+        $item->raw();
+    }
+
+    /**
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      */
     public function testGetItem()

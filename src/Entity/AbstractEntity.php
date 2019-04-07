@@ -13,6 +13,10 @@ use Tecnogo\MeliSdk\Client;
  */
 abstract class AbstractEntity implements Entity
 {
+    /**
+     * @var string|int
+     */
+    protected $id;
     protected $source;
     protected $lazySource;
 
@@ -26,10 +30,12 @@ abstract class AbstractEntity implements Entity
      *
      * @param Client $client
      * @param array|callable|null $source
+     * @param null $id
      */
-    public function __construct(Client $client, $source = null)
+    public function __construct(Client $client, $source = null, $id = null)
     {
         $this->client = $client;
+        $this->id = $id;
 
         if ($source != null) {
             $this->setSource($source);

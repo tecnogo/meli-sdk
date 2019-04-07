@@ -10,15 +10,16 @@ trait CreateFixedResponseGetRequest
 {
     /**
      * @param $httpCode
-     * @param $response
+     * @param string $response
+     * @param array $options
      * @return Client
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      */
-    protected function getClientWithFixedGetResponse($httpCode, $response = '')
+    protected function getClientWithFixedGetResponse($httpCode, $response = '', array $options = [])
     {
-        return new Client([
+        return new Client($options + [
             'definitions' => [
                 Get::class => function ($resource, $payload = [], $options = []) use ($httpCode, $response) {
                     $handler = new FixedResponseGetRequest($resource);

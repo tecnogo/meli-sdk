@@ -10,16 +10,15 @@ use Tecnogo\MeliSdk\Test\Mock\FixedResponseGetRequest;
 trait CreateCallbackResponseGetRequest
 {
     /**
-     * @param $httpCode
-     * @param $response
+     * @param $callback
      * @return Client
-     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      */
-    protected function getClientWithCallbackGetResponse($callback)
+    protected function getClientWithCallbackGetResponse($callback, array $options = [])
     {
-        return new Client([
+        return new Client($options + [
             'definitions' => [
                 Get::class => function ($resource, $payload = [], $options = []) use ($callback) {
                     $handler = new FixedResponseGetRequest($resource);

@@ -11,14 +11,15 @@ trait CreateMapResponseGetRequest
 {
     /**
      * @param $responseMap
+     * @param array $options
      * @return Client
      * @throws MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      */
-    protected function getClientWithMapGetResponse($responseMap)
+    protected function getClientWithMapGetResponse($responseMap, array $options = [])
     {
-        return new Client([
+        return new Client($options + [
             'definitions' => [
                 Get::class => function ($resource, $payload = [], $options = []) use ($responseMap) {
                     $handler = new FixedResponseGetRequest($resource, $payload);

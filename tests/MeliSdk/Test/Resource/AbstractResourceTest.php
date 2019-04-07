@@ -26,7 +26,7 @@ abstract class AbstractResourceTest extends TestCase
      */
     public function testMalformedJsonResponse()
     {
-        $client = $this->getClientWithFixedGetResponse(200, 'not_json!{');
+        $client = $this->createClientForResponseErrorTest(200, 'not_json!{');
 
         $this->expectException(MalformedJsonResponseException::class);
         $this->triggerRequestForErrorResponses($client);
@@ -39,7 +39,7 @@ abstract class AbstractResourceTest extends TestCase
      */
     public function testNotFoundResponse()
     {
-        $client = $this->getClientWithFixedGetResponse(404, '');
+        $client = $this->createClientForResponseErrorTest(404, '');
 
         $this->expectException(NotFoundException::class);
         $this->triggerRequestForErrorResponses($client);
@@ -52,7 +52,7 @@ abstract class AbstractResourceTest extends TestCase
      */
     public function testServerErrorResponse()
     {
-        $client = $this->getClientWithFixedGetResponse(500, '');
+        $client = $this->createClientForResponseErrorTest(500, '');
 
         $this->expectException(UnexpectedHttpResponseCodeException::class);
         $this->triggerRequestForErrorResponses($client);
@@ -65,7 +65,7 @@ abstract class AbstractResourceTest extends TestCase
      */
     public function testNonHandledHttpCodeResponse()
     {
-        $client = $this->getClientWithFixedGetResponse('wubba dubba lub', '');
+        $client = $this->createClientForResponseErrorTest('wubba dubba lub', '');
 
         $this->expectException(UnexpectedHttpResponseCodeException::class);
         $this->triggerRequestForErrorResponses($client);
@@ -78,7 +78,7 @@ abstract class AbstractResourceTest extends TestCase
      */
     public function testForbiddenResourceErrorResponse()
     {
-        $client = $this->getClientWithFixedGetResponse(403, '');
+        $client = $this->createClientForResponseErrorTest(403, '');
 
         $this->expectException(ForbiddenResourceException::class);
         $this->triggerRequestForErrorResponses($client);
@@ -91,7 +91,7 @@ abstract class AbstractResourceTest extends TestCase
      */
     public function testHttpCode400InvalidTokenException()
     {
-        $client = $this->getClientWithFixedGetResponse(400, '{"message":"Failed to validate token"}');
+        $client = $this->createClientForResponseErrorTest(400, '{"message":"Failed to validate token"}');
 
         $this->expectException(InvalidTokenException::class);
         $this->triggerRequestForErrorResponses($client);
@@ -104,7 +104,7 @@ abstract class AbstractResourceTest extends TestCase
      */
     public function testHttpCode401InvalidTokenException()
     {
-        $client = $this->getClientWithFixedGetResponse(401, '');
+        $client = $this->createClientForResponseErrorTest(401, '');
 
         $this->expectException(InvalidTokenException::class);
         $this->triggerRequestForErrorResponses($client);
@@ -117,9 +117,22 @@ abstract class AbstractResourceTest extends TestCase
      */
     public function testBadRequestException()
     {
-        $client = $this->getClientWithFixedGetResponse(400, '{"message":"Bad Request"}');
+        $client = $this->createClientForResponseErrorTest(400, '{"message":"Bad Request"}');
 
         $this->expectException(BadRequestException::class);
         $this->triggerRequestForErrorResponses($client);
+    }
+
+    /**
+     * @param $httpCode
+     * @param $response
+     * @return Client
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     */
+    protected function createClientForResponseErrorTest($httpCode, $response)
+    {
+        return $this->getClientWithFixedGetResponse($httpCode, $response);
     }
 }

@@ -22,6 +22,7 @@ use Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException;
  */
 abstract class AbstractRequest implements Request
 {
+    const SUCCESSFUL_HTTP_CODES = [200, 201];
     /**
      * @var string
      */
@@ -82,7 +83,7 @@ abstract class AbstractRequest implements Request
 
         $body = json_decode($response, true);
 
-        if ($httpCode == 200 && !$body) {
+        if (in_array($httpCode, static::SUCCESSFUL_HTTP_CODES) && !is_array($body)) {
             throw new MalformedJsonResponseException($response);
         }
 

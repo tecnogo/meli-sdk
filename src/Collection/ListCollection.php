@@ -188,7 +188,7 @@ class ListCollection implements ArrayList, \ArrayAccess, \IteratorAggregate
     /**
      * @return int
      */
-    public function empty()
+    public function isEmpty()
     {
         return $this->count() === 0;
     }

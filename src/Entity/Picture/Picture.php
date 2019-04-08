@@ -20,7 +20,7 @@ class Picture extends AbstractEntity
      */
     public function id()
     {
-        return $this->get('id');
+        return $this->id ?? $this->get('id');
     }
 
     /**
@@ -68,14 +68,6 @@ class Picture extends AbstractEntity
     }
 
     /**
-     * @return string|null
-     */
-    public function quality()
-    {
-        return $this->get('quality');
-    }
-
-    /**
      * @return int|null
      */
     public function width()
@@ -116,7 +108,10 @@ class Picture extends AbstractEntity
             return VariationCollection::make();
         }
 
-        return $this->client->exec(GetVariations::class, ['id' => $id]);
+        return $this->client->make(
+            VariationCollection::class,
+            $this->get('variations', $this->client->exec(GetVariations::class, ['id' => $id]))
+        );
     }
 
     /**
@@ -135,5 +130,10 @@ class Picture extends AbstractEntity
         $fragments = explode('x', $size);
 
         return (int)$fragments[$index];
+    }
+
+    public function download()
+    {
+
     }
 }

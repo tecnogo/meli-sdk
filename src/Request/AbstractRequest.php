@@ -10,7 +10,6 @@ use Tecnogo\MeliSdk\Request\Exception\MissingAccessTokenException;
 use Tecnogo\MeliSdk\Request\Exception\NotFoundException;
 use Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException;
 use Tecnogo\MeliSdk\Request\Exception\RequestErrorException;
-use Tecnogo\MeliSdk\Request\Exception\TooManyRetriesException;
 use Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException;
 
 /**

@@ -9,6 +9,7 @@ use Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException;
 use Tecnogo\MeliSdk\Request\Exception\InvalidTokenException;
 use Tecnogo\MeliSdk\Request\Exception\MalformedJsonResponseException;
 use Tecnogo\MeliSdk\Request\Exception\NotFoundException;
+use Tecnogo\MeliSdk\Request\Exception\RequestTimeoutException;
 use Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException;
 use Tecnogo\MeliSdk\Request\Get;
 use Tecnogo\MeliSdk\Test\Mock\FixedResultGetRequest;
@@ -120,6 +121,19 @@ abstract class AbstractResourceTest extends TestCase
         $client = $this->createClientForResponseErrorTest(400, '{"message":"Bad Request"}');
 
         $this->expectException(BadRequestException::class);
+        $this->triggerRequestForErrorResponses($client);
+    }
+
+    /**
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     */
+    public function testGatewayTimeoutException()
+    {
+        $client = $this->createClientForResponseErrorTest(504, '{"message":"Gateway Timeout"}');
+
+        $this->expectException(RequestTimeoutException::class);
         $this->triggerRequestForErrorResponses($client);
     }
 

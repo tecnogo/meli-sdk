@@ -10,6 +10,7 @@ use Tecnogo\MeliSdk\Request\Exception\MissingAccessTokenException;
 use Tecnogo\MeliSdk\Request\Exception\NotFoundException;
 use Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException;
 use Tecnogo\MeliSdk\Request\Exception\RequestErrorException;
+use Tecnogo\MeliSdk\Request\Exception\RequestTimeoutException;
 use Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException;
 
 /**
@@ -75,6 +76,7 @@ abstract class AbstractRequest implements Request
      * @throws BadRequestException
      * @throws MalformedJsonResponseException
      * @throws RequestErrorException
+     * @throws RequestTimeoutException
      */
     public function exec()
     {
@@ -100,6 +102,7 @@ abstract class AbstractRequest implements Request
      * @throws NotFoundException
      * @throws UnexpectedHttpResponseCodeException
      * @throws RequestErrorException
+     * @throws RequestTimeoutException
      */
     protected function handledResult($httpCode, $result)
     {
@@ -118,6 +121,8 @@ abstract class AbstractRequest implements Request
                 throw new ForbiddenResourceException($message);
             case 404:
                 throw new NotFoundException($message);
+            case 504:
+                throw new RequestTimeoutException($message);
             default:
                 throw new UnexpectedHttpResponseCodeException("$httpCode: $message ($resource)");
         }

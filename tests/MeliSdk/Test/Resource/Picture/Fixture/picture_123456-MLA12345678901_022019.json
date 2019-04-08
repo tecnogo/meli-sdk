@@ -1,0 +1,98 @@
+{
+  "id": "123456-MLA12345678901_022019",
+  "max_size": "1280x960",
+  "dominant_color": "254,254,254",
+  "crop": {
+    "y_size": null,
+    "x_size": null,
+    "y_offset": null,
+    "x_offset": null
+  },
+  "variations": [
+    {
+      "size": "1280x960",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-F.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-F.jpg"
+    },
+    {
+      "size": "500x375",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-O.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-O.jpg"
+    },
+    {
+      "size": "400x400",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-C.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-C.jpg"
+    },
+    {
+      "size": "320x320",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-V.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-V.jpg"
+    },
+    {
+      "size": "280x280",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-E.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-E.jpg"
+    },
+    {
+      "size": "250x250",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-P.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-P.jpg"
+    },
+    {
+      "size": "228x171",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-A.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-A.jpg"
+    },
+    {
+      "size": "210x210",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-Y.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-Y.jpg"
+    },
+    {
+      "size": "200x200",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-N.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-N.jpg"
+    },
+    {
+      "size": "160x160",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-T.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-T.jpg"
+    },
+    {
+      "size": "160x160",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-Z.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-Z.jpg"
+    },
+    {
+      "size": "120x120",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-G.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-G.jpg"
+    },
+    {
+      "size": "90x90",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-I.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-I.jpg"
+    },
+    {
+      "size": "90x90",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-S.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-S.jpg"
+    },
+    {
+      "size": "70x70",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-R.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-R.jpg"
+    },
+    {
+      "size": "40x40",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-M.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-M.jpg"
+    },
+    {
+      "size": "800x800",
+      "url": "http://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-B.jpg",
+      "secure_url": "https://mla-s2-p.mlstatic.com/123456-MLA12345678901_022019-B.jpg"
+    }
+  ]
+}

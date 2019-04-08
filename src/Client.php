@@ -217,6 +217,22 @@ final class Client
     }
 
     /**
+     * @param string $id
+     * @return \Tecnogo\MeliSdk\Entity\Item\Item
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws ContainerException
+     * @throws Exception\MissingConfigurationException
+     */
+    public function picture($id)
+    {
+        return $this->lazyEntity(
+            \Tecnogo\MeliSdk\Entity\Picture\Picture::class,
+            \Tecnogo\MeliSdk\Entity\Picture\Api\GetRawPicture::class,
+            $id
+        );
+    }
+
+    /**
      * @param $entity
      * @param $action
      * @param $id

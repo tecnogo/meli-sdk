@@ -28,7 +28,7 @@ final class GetVariations extends AbstractTemplateAction
      */
     public function handle(array $result = [])
     {
-        return VariationCollection::make($result['variations'] ?? []);
+        return $result['variations'] ?? [];
     }
 
     /**

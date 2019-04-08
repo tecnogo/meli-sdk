@@ -7,6 +7,8 @@ use Tecnogo\MeliSdk\Entity\Category\Category;
 use Tecnogo\MeliSdk\Entity\Item\Attribute;
 use Tecnogo\MeliSdk\Entity\Item\AttributeCollection;
 use Tecnogo\MeliSdk\Entity\Item\Item;
+use Tecnogo\MeliSdk\Entity\Picture\Collection;
+use Tecnogo\MeliSdk\Entity\Picture\Picture;
 use Tecnogo\MeliSdk\Test\Resource\AbstractResourceTest;
 use Tecnogo\MeliSdk\Test\Resource\CreateCallbackResponseGetRequest;
 use Tecnogo\MeliSdk\Test\Resource\CreateMapResponseGetRequest;
@@ -182,6 +184,34 @@ class GetItemTest extends AbstractResourceTest
         $this->assertEquals($item->category()->id(), 'MLA1467');
         $this->assertEquals($item->category()->name(), 'Alquiler');
     }
+
+    /**
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     */
+    public function testItemPictures()
+    {
+        $client = $this->getClientWithMapGetResponse([
+            'items/MLA111111111' => [200, file_get_contents(__DIR__ . '/Fixture/item_MLA111111111.json')]
+        ]);
+
+        $this->clearCache($client);
+
+        $item = $attributes = $client->item('MLA111111111');
+
+        $this->assertInstanceOf(Collection::class, $item->pictures());
+
+        $this->assertCount(19, $item->pictures());
+
+        $item->pictures()->each(function ($picture) {
+            $this->assertInstanceOf(Picture::class, $picture);
+        });
+
+        $item->pictures();
+    }
+
     /**
      * @param Client $client
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException

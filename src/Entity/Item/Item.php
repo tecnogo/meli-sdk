@@ -140,14 +140,15 @@ final class Item extends AbstractEntity
     }
 
     /**
-     * @return \Tecnogo\MeliSdk\Entity\Picture\Collection|Collection
+     * @return \Tecnogo\MeliSdk\Entity\Picture\Collection
      */
     public function pictures()
     {
         if (!$this->pictureCollection) {
-            $this->pictureCollection = \Tecnogo\MeliSdk\Entity\Picture\Collection::make(array_map(function ($picture) {
-                return $this->client->make(Picture::class)->hydrate($picture);
-            }, $this->get('pictures')));
+            $this->pictureCollection = \Tecnogo\MeliSdk\Entity\Picture\Collection
+                ::make($this->get('pictures'), function ($picture) {
+                    return $this->client->make(Picture::class)->hydrate($picture);
+                });
         }
 
         return $this->pictureCollection;

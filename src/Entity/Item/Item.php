@@ -153,11 +153,6 @@ final class Item extends AbstractEntity
         return $this->pictureCollection;
     }
 
-    public function calculateShipping($zipCode)
-    {
-
-    }
-
     /**
      * @return $this
      * @throws \Psr\SimpleCache\InvalidArgumentException

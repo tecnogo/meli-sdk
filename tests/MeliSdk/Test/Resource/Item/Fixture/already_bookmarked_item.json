@@ -1,0 +1,6 @@
+{
+  "message": "You are already following this item.",
+  "error": "bad_request",
+  "status": 400,
+  "cause": []
+}

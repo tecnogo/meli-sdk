@@ -3,6 +3,7 @@
 namespace Tecnogo\MeliSdk\Entity\Item;
 
 use Tecnogo\MeliSdk\Entity\AbstractEntity;
+use Tecnogo\MeliSdk\Entity\LoggedUser\Api\PostBookmark;
 use Tecnogo\MeliSdk\Entity\Picture\Picture;
 
 /**
@@ -117,6 +118,7 @@ final class Item extends AbstractEntity
      * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
      * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
      * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      */
     public function category()
     {
@@ -149,5 +151,26 @@ final class Item extends AbstractEntity
         }
 
         return $this->pictureCollection;
+    }
+
+    public function calculateShipping($zipCode)
+    {
+
+    }
+
+    /**
+     * @return $this
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     */
+    public function bookmark()
+    {
+        $this->client->exec(PostBookmark::class, [
+            'itemId' => $this->id()
+        ]);
+
+        return $this;
     }
 }

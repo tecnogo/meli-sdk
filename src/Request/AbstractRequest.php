@@ -109,6 +109,7 @@ abstract class AbstractRequest implements Request
 
         switch ($httpCode) {
             case 200:
+            case 201:
                 return $result;
             case 400:
                 return $this->handleHttpCode400($result ?? []);
@@ -155,17 +156,16 @@ abstract class AbstractRequest implements Request
     private function handleHttpCode400(array $payload)
     {
         $message = trim($payload['message'] ?? 'No message.');
-        $error = $payload['error'] ?? null;
 
-        switch ($message) {  // FIXME use $error
-            case 'You must send an app_id in order to retrieve the messages': // FIXME !?
+        switch ($message) {
+            case ErrorMessageDictionary::MESSAGES_RETRIEVE_REQUIRED_APP_ID:
                 throw new MissingAppIdException($message);
-            case 'Failed to validate token':
+            case ErrorMessageDictionary::FAILED_TO_VALIDATE_TOKEN:
                 throw new InvalidTokenException($message);
             case 'Bad Request':
-                throw new BadRequestException($this->resource);
+                throw new BadRequestException($message);
             default:
-                throw new RequestErrorException($error ?? $message);
+                throw new RequestErrorException($message);
         }
     }
 

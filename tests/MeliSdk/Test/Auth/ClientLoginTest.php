@@ -4,7 +4,9 @@ namespace Tecnogo\MeliSdk\Test\Auth;
 
 use PHPUnit\Framework\TestCase;
 use Tecnogo\MeliSdk\Auth\Exception\InvalidAuthException;
+use Tecnogo\MeliSdk\Client;
 use Tecnogo\MeliSdk\Config\AccessToken;
+use Tecnogo\MeliSdk\Request\ErrorMessageDictionary;
 use Tecnogo\MeliSdk\Test\Mock\CreateMapResponsePostRequest;
 
 class ClientLoginTest extends TestCase
@@ -31,7 +33,7 @@ class ClientLoginTest extends TestCase
         ], $options);
 
         $this->expectException(InvalidAuthException::class);
-        $this->expectExceptionMessage('invalid_client');
+        $this->expectExceptionMessage(ErrorMessageDictionary::INVALID_LOGIN_CODE);
 
         $client->login('wubba_lubba_dub');
     }

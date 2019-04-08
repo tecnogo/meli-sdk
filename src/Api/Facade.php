@@ -4,8 +4,10 @@ namespace Tecnogo\MeliSdk\Api;
 
 use Tecnogo\MeliSdk\Config\Config;
 use Tecnogo\MeliSdk\Client\Factory;
+use Tecnogo\MeliSdk\Request\Delete;
 use Tecnogo\MeliSdk\Request\Get;
 use Tecnogo\MeliSdk\Request\Method;
+use Tecnogo\MeliSdk\Request\Post;
 
 /**
  * Class Facade
@@ -52,6 +54,54 @@ final class Facade
     {
         return $this->factory
             ->make(Get::class, [
+                'resource' => $resource,
+                'payload' => $payload,
+                'options' => $options
+            ])
+            ->exec();
+    }
+
+    /**
+     * @param $resource
+     * @param array $payload
+     * @param array $options
+     * @return mixed
+     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     */
+    private function delete($resource, array $payload = [], array $options = [])
+    {
+        return $this->factory
+            ->make(Delete::class, [
+                'resource' => $resource,
+                'payload' => $payload,
+                'options' => $options
+            ])
+            ->exec();
+    }
+
+    /**
+     * @param $resource
+     * @param array $payload
+     * @param array $options
+     * @return mixed
+     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     */
+    private function post($resource, array $payload = [], array $options = [])
+    {
+        return $this->factory
+            ->make(Post::class, [
                 'resource' => $resource,
                 'payload' => $payload,
                 'options' => $options
@@ -113,6 +163,10 @@ final class Facade
         switch ($method) {
             case Method::GET:
                 return $this->get($resource, array_merge($query, $action->getPayload()));
+            case Method::POST:
+                return $this->post($resource . '?'. http_build_query($query), $action->getPayload());
+            case Method::DELETE:
+                return $this->delete($resource, array_merge($query, $action->getPayload()));
         }
 
         throw new \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException($method);

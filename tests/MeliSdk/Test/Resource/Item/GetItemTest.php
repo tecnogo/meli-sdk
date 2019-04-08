@@ -86,6 +86,8 @@ class GetItemTest extends AbstractResourceTest
             file_get_contents(__DIR__ . '/Fixture/item_MLA111111111.json')
         );
 
+        $this->clearCache($client);
+
         $attributes = $client->item('MLA111111111')->attributes();
 
         $this->assertInstanceOf(AttributeCollection::class, $attributes);
@@ -168,14 +170,28 @@ class GetItemTest extends AbstractResourceTest
     public function testItemCategory()
     {
         $client = $this->getClientWithMapGetResponse([
-            'item/MLA111111111' => [200, file_get_contents(__DIR__ . '/Fixture/item_MLA111111111.json')],
+            'items/MLA111111111' => [200, file_get_contents(__DIR__ . '/Fixture/item_MLA111111111.json')],
             'categories/MLA1467' => [200, file_get_contents(__DIR__ . '/Fixture/categories_MLA1467.json')],
         ]);
 
-        $item = $attributes = $client->item('MLA111111111');
+        $this->clearCache($client);
+
+        $item = $client->item('MLA111111111');
 
         $this->assertInstanceOf(Category::class, $item->category());
         $this->assertEquals($item->category()->id(), 'MLA1467');
         $this->assertEquals($item->category()->name(), 'Alquiler');
+    }
+    /**
+     * @param Client $client
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     */
+    protected function clearCache(Client $client)
+    {
+        $client
+            ->make(\Tecnogo\MeliSdk\Entity\Item\Api\GetRawItem::class, ['id' => -1])
+            ->cache()
+            ->clear();
     }
 }

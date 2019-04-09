@@ -1,6 +1,6 @@
 <?php
 
-namespace Tecnogo\MeliSdk\Test\Collection;
+namespace Tecnogo\MeliSdk\Test\Unit\Collection;
 
 
 use PHPUnit\Framework\TestCase;

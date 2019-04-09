@@ -1,0 +1,1300 @@
+[
+  {
+    "id": "CONTACT_SCHEDULE",
+    "name": "Horario de contacto",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "string",
+    "value_max_length": 255,
+    "attribute_group_id": "FIND",
+    "attribute_group_name": "Ficha técnica"
+  },
+  {
+    "id": "PROPERTY_TYPE",
+    "name": "Inmueble",
+    "tags": {
+      "fixed": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "list",
+    "values": [
+      {
+        "id": "242060",
+        "name": "Casa"
+      }
+    ],
+    "attribute_group_id": "MAIN",
+    "attribute_group_name": "Principales"
+  },
+  {
+    "id": "OPERATION",
+    "name": "Operación",
+    "tags": {
+      "fixed": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "list",
+    "values": [
+      {
+        "id": "242073",
+        "name": "Alquiler"
+      }
+    ],
+    "attribute_group_id": "MAIN",
+    "attribute_group_name": "Principales"
+  },
+  {
+    "id": "OPERATION_SUBTYPE",
+    "name": "Subtipo de operación",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "list",
+    "values": [
+      {
+        "id": "244562",
+        "name": "Propiedad individual"
+      },
+      {
+        "id": "245034",
+        "name": "Emprendimiento"
+      }
+    ],
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "TOTAL_AREA",
+    "name": "Superficie total",
+    "tags": {
+      "catalog_required": true,
+      "required": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number_unit",
+    "value_max_length": 255,
+    "allowed_units": [
+      {
+        "id": "m²",
+        "name": "m²"
+      }
+    ],
+    "default_unit": "m²",
+    "attribute_group_id": "FIND",
+    "attribute_group_name": "Ficha técnica"
+  },
+  {
+    "id": "COVERED_AREA",
+    "name": "Superficie cubierta",
+    "tags": {
+      "catalog_required": true,
+      "required": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number_unit",
+    "value_max_length": 255,
+    "allowed_units": [
+      {
+        "id": "m²",
+        "name": "m²"
+      }
+    ],
+    "default_unit": "m²",
+    "attribute_group_id": "FIND",
+    "attribute_group_name": "Ficha técnica"
+  },
+  {
+    "id": "LAND_AREA",
+    "name": "Superficie de terreno",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number_unit",
+    "value_max_length": 255,
+    "allowed_units": [
+      {
+        "id": "m²",
+        "name": "m²"
+      }
+    ],
+    "default_unit": "m²",
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "BALCONY_AREA",
+    "name": "Superficie de balcón",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number_unit",
+    "value_max_length": 255,
+    "allowed_units": [
+      {
+        "id": "m²",
+        "name": "m²"
+      },
+      {
+        "id": "in²",
+        "name": "in²"
+      },
+      {
+        "id": "ha",
+        "name": "ha"
+      },
+      {
+        "id": "cm²",
+        "name": "cm²"
+      }
+    ],
+    "default_unit": "m²",
+    "attribute_group_id": "DFLT",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "ROOMS",
+    "name": "Ambientes",
+    "tags": {
+      "catalog_required": true,
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number",
+    "value_max_length": 18,
+    "attribute_group_id": "FIND",
+    "attribute_group_name": "Ficha técnica"
+  },
+  {
+    "id": "BEDROOMS",
+    "name": "Dormitorios",
+    "tags": {
+      "catalog_required": true,
+      "required": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number",
+    "value_max_length": 18,
+    "attribute_group_id": "FIND",
+    "attribute_group_name": "Ficha técnica"
+  },
+  {
+    "id": "FULL_BATHROOMS",
+    "name": "Baños",
+    "tags": {
+      "catalog_required": true,
+      "required": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number",
+    "value_max_length": 18,
+    "attribute_group_id": "FIND",
+    "attribute_group_name": "Ficha técnica"
+  },
+  {
+    "id": "PARKING_LOTS",
+    "name": "Cocheras",
+    "tags": {
+      "catalog_required": true,
+      "required": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number",
+    "value_max_length": 18,
+    "attribute_group_id": "FIND",
+    "attribute_group_name": "Ficha técnica"
+  },
+  {
+    "id": "FLOORS",
+    "name": "Pisos",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number",
+    "value_max_length": 18,
+    "attribute_group_id": "FIND",
+    "attribute_group_name": "Ficha técnica"
+  },
+  {
+    "id": "PROPERTY_AGE",
+    "name": "Antigüedad",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number_unit",
+    "value_max_length": 255,
+    "allowed_units": [
+      {
+        "id": "años",
+        "name": "años"
+      }
+    ],
+    "default_unit": "años",
+    "attribute_group_id": "FIND",
+    "attribute_group_name": "Ficha técnica"
+  },
+  {
+    "id": "PROPERTY_OWNERSHIP",
+    "name": "Tipo de propiedad",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "list",
+    "values": [
+      {
+        "id": "345142",
+        "name": "Casa sola"
+      },
+      {
+        "id": "345143",
+        "name": "Casa en condominio"
+      },
+      {
+        "id": "345144",
+        "name": "Casa en fraccionamiento"
+      }
+    ],
+    "attribute_group_id": "DFLT",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "HOUSE_PROPERTY_SUBTYPE",
+    "name": "Tipo de casa",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "list",
+    "values": [
+      {
+        "id": "266259",
+        "name": "Dúplex"
+      },
+      {
+        "id": "266260",
+        "name": "Ph"
+      },
+      {
+        "id": "266261",
+        "name": "Tríplex"
+      },
+      {
+        "id": "266256",
+        "name": "Cabaña"
+      },
+      {
+        "id": "266257",
+        "name": "Casa"
+      },
+      {
+        "id": "266258",
+        "name": "Chalet"
+      }
+    ],
+    "attribute_group_id": "FIND",
+    "attribute_group_name": "Ficha técnica"
+  },
+  {
+    "id": "FACING",
+    "name": "Orientación",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "list",
+    "values": [
+      {
+        "id": "242328",
+        "name": "Sur"
+      },
+      {
+        "id": "242330",
+        "name": "Oeste"
+      },
+      {
+        "id": "242327",
+        "name": "Norte"
+      },
+      {
+        "id": "242329",
+        "name": "Este"
+      }
+    ],
+    "attribute_group_id": "FIND",
+    "attribute_group_name": "Ficha técnica"
+  },
+  {
+    "id": "IPTU_TAX",
+    "name": "Valor del IPTU",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number",
+    "value_max_length": 18,
+    "attribute_group_id": "DFLT",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "CONDO_VALUE",
+    "name": "Valor del condominio",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number",
+    "value_max_length": 18,
+    "attribute_group_id": "DFLT",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "HAS_INTERNET_ACCESS",
+    "name": "Acceso a internet",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "COMOYAMEN",
+    "attribute_group_name": "Comodidades y amenities"
+  },
+  {
+    "id": "HAS_AIR_CONDITIONING",
+    "name": "Aire acondicionado",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "COMOYAMEN",
+    "attribute_group_name": "Comodidades y amenities"
+  },
+  {
+    "id": "HAS_ALARM",
+    "name": "Alarma",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "CARACTERISTICAS",
+    "attribute_group_name": "Características adicionales"
+  },
+  {
+    "id": "HAS_ATTIC",
+    "name": "Altillo",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "FURNISHED",
+    "name": "Amoblado",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "CARACTERISTICAS",
+    "attribute_group_name": "Características adicionales"
+  },
+  {
+    "id": "PROFESSIONAL_USE_ALLOWED",
+    "name": "Apto profesional",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "CARACTERISTICAS",
+    "attribute_group_name": "Características adicionales"
+  },
+  {
+    "id": "HAS_BALCONY",
+    "name": "Balcón",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_HEATING",
+    "name": "Calefacción",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "COMOYAMEN",
+    "attribute_group_name": "Comodidades y amenities"
+  },
+  {
+    "id": "HAS_KITCHEN",
+    "name": "Cocina",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_DINNING_ROOM",
+    "name": "Comedor",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_MAID_ROOM",
+    "name": "Dependencia de servicio",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_BEDROOM_SUITE",
+    "name": "Dormitorio en suite",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_STUDY",
+    "name": "Estudio",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_GARDEN",
+    "name": "Jardín",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_TELEPHONE_LINE",
+    "name": "Línea telefónica",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "CARACTERISTICAS",
+    "attribute_group_name": "Características adicionales"
+  },
+  {
+    "id": "HAS_LIVING_ROOM",
+    "name": "Living",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_GRILL",
+    "name": "Parrilla",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_PATIO",
+    "name": "Patio",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_SWIMMING_POOL",
+    "name": "Pileta",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      },
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      }
+    ],
+    "attribute_group_id": "COMOYAMEN",
+    "attribute_group_name": "Comodidades y amenities"
+  },
+  {
+    "id": "HAS_CLOSET",
+    "name": "Placards",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_PLAYROOM",
+    "name": "Playroom",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_ELECTRIC_GATE_OPENER",
+    "name": "Portón automático",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "COMOYAMEN",
+    "attribute_group_name": "Comodidades y amenities"
+  },
+  {
+    "id": "HAS_SECURITY",
+    "name": "Seguridad",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "COMOYAMEN",
+    "attribute_group_name": "Comodidades y amenities"
+  },
+  {
+    "id": "HAS_TERRACE",
+    "name": "Terraza",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_HALF_BATH",
+    "name": "Toilette",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "HAS_DRESSING_ROOM",
+    "name": "Vestidor",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "AMBIENTES",
+    "attribute_group_name": "Ambientes"
+  },
+  {
+    "id": "ONLY_FAMILIES",
+    "name": "Solo familias",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "CARACTERISTICAS",
+    "attribute_group_name": "Características adicionales"
+  },
+  {
+    "id": "WAREHOUSES",
+    "name": "Bodegas",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number",
+    "value_max_length": 18,
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "HAS_JACUZZI",
+    "name": "Jacuzzi",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "HAS_LAUNDRY",
+    "name": "Lavadero",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "HAS_CABLE_TV",
+    "name": "TV por cable",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "MAINTENANCE_FEE",
+    "name": "Expensas",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number_unit",
+    "value_max_length": 255,
+    "allowed_units": [
+      {
+        "id": "USD",
+        "name": "USD"
+      },
+      {
+        "id": "UVA",
+        "name": "UVA"
+      },
+      {
+        "id": "ARS",
+        "name": "ARS"
+      }
+    ],
+    "default_unit": "ARS",
+    "attribute_group_id": "FIND",
+    "attribute_group_name": "Ficha técnica"
+  },
+  {
+    "id": "CMG_SITE",
+    "name": "Sitio de origen",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "string",
+    "value_max_length": 255,
+    "attribute_group_id": "DFLT",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "CANONICAL_URL",
+    "name": "Url canónica",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "string",
+    "value_max_length": 255,
+    "attribute_group_id": "DFLT",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "PROPERTY_CODE",
+    "name": "Código de la propiedad",
+    "tags": {
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "string",
+    "value_max_length": 255,
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "SOCIAL_STRATUM",
+    "name": "Estrato social",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "number",
+    "value_max_length": 18,
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "ITEM_CONDITION",
+    "name": "Condición del ítem",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 2,
+    "value_type": "list",
+    "values": [
+      {
+        "id": "2230581",
+        "name": "Usado"
+      },
+      {
+        "id": "2230284",
+        "name": "Nuevo"
+      }
+    ],
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  }
+]

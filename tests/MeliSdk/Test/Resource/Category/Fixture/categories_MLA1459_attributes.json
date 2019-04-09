@@ -1,0 +1,488 @@
+[
+  {
+    "id": "BRAND",
+    "name": "Marca",
+    "tags": {
+    },
+    "hierarchy": "PARENT_PK",
+    "relevance": 1,
+    "value_type": "string",
+    "value_max_length": 255,
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "MODEL",
+    "name": "Modelo",
+    "tags": {
+    },
+    "hierarchy": "PARENT_PK",
+    "relevance": 1,
+    "value_type": "string",
+    "value_max_length": 255,
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "SELLER_SKU",
+    "name": "SKU ",
+    "tags": {
+      "hidden": true,
+      "variation_attribute": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 1,
+    "value_type": "string",
+    "value_max_length": 255,
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "GTIN",
+    "name": "Código universal de producto",
+    "tags": {
+      "multivalued": true,
+      "variation_attribute": true,
+      "used_hidden": true,
+      "validate": true
+    },
+    "hierarchy": "PRODUCT_IDENTIFIER",
+    "relevance": 1,
+    "type": "product_identifier",
+    "value_type": "string",
+    "value_max_length": 255,
+    "tooltip": "¿Cómo lo reconozco? Es un número de 8 a 14 dígitos que se encuentra junto al código de barras, en la caja del producto, o en su etiqueta. ![Código universal de producto](https://http2.mlstatic.com/static/org-img/sd-landings/assets/pi-tooltip.png)",
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros",
+    "hint": "Suele ser un EAN, UPC u otro GTIN."
+  },
+  {
+    "id": "IS_FLAMMABLE",
+    "name": "Es inflamable",
+    "tags": {
+      "hidden": true,
+      "read_only": true
+    },
+    "hierarchy": "FAMILY",
+    "relevance": 2,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "IS_KIT",
+    "name": "Es kit",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 2,
+    "value_type": "boolean",
+    "values": [
+      {
+        "id": "242084",
+        "name": "No",
+        "metadata": {
+          "value": false
+        }
+      },
+      {
+        "id": "242085",
+        "name": "Sí",
+        "metadata": {
+          "value": true
+        }
+      }
+    ],
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "DESCRIPTIVE_TAGS",
+    "name": "Tags descriptivos",
+    "tags": {
+      "hidden": true,
+      "multivalued": true,
+      "read_only": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 2,
+    "value_type": "string",
+    "value_max_length": 255,
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "PACKAGE_LENGTH",
+    "name": "Largo del paquete",
+    "tags": {
+      "hidden": true,
+      "read_only": true,
+      "variation_attribute": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 2,
+    "value_type": "number_unit",
+    "value_max_length": 255,
+    "allowed_units": [
+      {
+        "id": "micras",
+        "name": "micras"
+      },
+      {
+        "id": "nm",
+        "name": "nm"
+      },
+      {
+        "id": "in",
+        "name": "in"
+      },
+      {
+        "id": "cm",
+        "name": "cm"
+      },
+      {
+        "id": "\"",
+        "name": "\""
+      },
+      {
+        "id": "mm",
+        "name": "mm"
+      },
+      {
+        "id": "ft",
+        "name": "ft"
+      },
+      {
+        "id": "pulgadas",
+        "name": "pulgadas"
+      },
+      {
+        "id": "km",
+        "name": "km"
+      },
+      {
+        "id": "U",
+        "name": "U"
+      },
+      {
+        "id": "manos",
+        "name": "manos"
+      },
+      {
+        "id": "m",
+        "name": "m"
+      }
+    ],
+    "default_unit": "cm",
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "PACKAGE_WEIGHT",
+    "name": "Peso del paquete",
+    "tags": {
+      "hidden": true,
+      "read_only": true,
+      "variation_attribute": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 2,
+    "value_type": "number_unit",
+    "value_max_length": 255,
+    "allowed_units": [
+      {
+        "id": "oz",
+        "name": "oz"
+      },
+      {
+        "id": "kg",
+        "name": "kg"
+      },
+      {
+        "id": "lb",
+        "name": "lb"
+      },
+      {
+        "id": "mg",
+        "name": "mg"
+      },
+      {
+        "id": "mcg",
+        "name": "mcg"
+      },
+      {
+        "id": "g",
+        "name": "g"
+      },
+      {
+        "id": "t",
+        "name": "t"
+      }
+    ],
+    "default_unit": "g",
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "PACKAGE_WIDTH",
+    "name": "Ancho del paquete",
+    "tags": {
+      "hidden": true,
+      "read_only": true,
+      "variation_attribute": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 2,
+    "value_type": "number_unit",
+    "value_max_length": 255,
+    "allowed_units": [
+      {
+        "id": "micras",
+        "name": "micras"
+      },
+      {
+        "id": "nm",
+        "name": "nm"
+      },
+      {
+        "id": "in",
+        "name": "in"
+      },
+      {
+        "id": "cm",
+        "name": "cm"
+      },
+      {
+        "id": "\"",
+        "name": "\""
+      },
+      {
+        "id": "mm",
+        "name": "mm"
+      },
+      {
+        "id": "ft",
+        "name": "ft"
+      },
+      {
+        "id": "pulgadas",
+        "name": "pulgadas"
+      },
+      {
+        "id": "km",
+        "name": "km"
+      },
+      {
+        "id": "U",
+        "name": "U"
+      },
+      {
+        "id": "manos",
+        "name": "manos"
+      },
+      {
+        "id": "m",
+        "name": "m"
+      }
+    ],
+    "default_unit": "cm",
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "PACKAGE_HEIGHT",
+    "name": "Altura del paquete",
+    "tags": {
+      "hidden": true,
+      "read_only": true,
+      "variation_attribute": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 2,
+    "value_type": "number_unit",
+    "value_max_length": 255,
+    "allowed_units": [
+      {
+        "id": "micras",
+        "name": "micras"
+      },
+      {
+        "id": "nm",
+        "name": "nm"
+      },
+      {
+        "id": "in",
+        "name": "in"
+      },
+      {
+        "id": "cm",
+        "name": "cm"
+      },
+      {
+        "id": "\"",
+        "name": "\""
+      },
+      {
+        "id": "mm",
+        "name": "mm"
+      },
+      {
+        "id": "ft",
+        "name": "ft"
+      },
+      {
+        "id": "pulgadas",
+        "name": "pulgadas"
+      },
+      {
+        "id": "km",
+        "name": "km"
+      },
+      {
+        "id": "U",
+        "name": "U"
+      },
+      {
+        "id": "manos",
+        "name": "manos"
+      },
+      {
+        "id": "m",
+        "name": "m"
+      }
+    ],
+    "default_unit": "cm",
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "ITEM_CONDITION",
+    "name": "Condición del ítem",
+    "tags": {
+      "hidden": true
+    },
+    "hierarchy": "ITEM",
+    "relevance": 2,
+    "value_type": "list",
+    "values": [
+      {
+        "id": "2230284",
+        "name": "Nuevo"
+      },
+      {
+        "id": "2230581",
+        "name": "Usado"
+      }
+    ],
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "EAN",
+    "name": "EAN",
+    "tags": {
+      "hidden": true,
+      "multivalued": true,
+      "variation_attribute": true,
+      "used_hidden": true,
+      "validate": true
+    },
+    "hierarchy": "PRODUCT_IDENTIFIER",
+    "relevance": 2,
+    "type": "product_identifier",
+    "value_type": "string",
+    "value_max_length": 255,
+    "tooltip": "Este es el número de 8, 13 o 14 dígitos que está en el código de barras de tu producto.",
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "UPC",
+    "name": "UPC",
+    "tags": {
+      "hidden": true,
+      "multivalued": true,
+      "variation_attribute": true,
+      "used_hidden": true,
+      "validate": true
+    },
+    "hierarchy": "PRODUCT_IDENTIFIER",
+    "relevance": 2,
+    "type": "product_identifier",
+    "value_type": "string",
+    "value_max_length": 255,
+    "tooltip": "Este es el número de 12 dígitos que está en el código de barras de tu producto.",
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "MPN",
+    "name": "MPN",
+    "tags": {
+      "hidden": true,
+      "multivalued": true,
+      "variation_attribute": true,
+      "used_hidden": true
+    },
+    "hierarchy": "PRODUCT_IDENTIFIER",
+    "relevance": 2,
+    "type": "product_identifier",
+    "value_type": "string",
+    "value_max_length": 255,
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "JAN",
+    "name": "JAN",
+    "tags": {
+      "hidden": true,
+      "multivalued": true,
+      "variation_attribute": true,
+      "used_hidden": true,
+      "validate": true
+    },
+    "hierarchy": "PRODUCT_IDENTIFIER",
+    "relevance": 2,
+    "type": "product_identifier",
+    "value_type": "string",
+    "value_max_length": 255,
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  },
+  {
+    "id": "GTIN14",
+    "name": "GTIN-14",
+    "tags": {
+      "hidden": true,
+      "multivalued": true,
+      "variation_attribute": true,
+      "used_hidden": true,
+      "validate": true
+    },
+    "hierarchy": "PRODUCT_IDENTIFIER",
+    "relevance": 2,
+    "type": "product_identifier",
+    "value_type": "string",
+    "value_max_length": 255,
+    "attribute_group_id": "OTHERS",
+    "attribute_group_name": "Otros"
+  }
+]

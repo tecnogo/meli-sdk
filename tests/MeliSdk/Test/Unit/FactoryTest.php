@@ -1,6 +1,6 @@
 <?php
 
-namespace Tecnogo\MeliSdk\Test;
+namespace Tecnogo\MeliSdk\Test\Unit;
 
 use Tecnogo\MeliSdk\Client;
 use Tecnogo\MeliSdk\Config\AccessToken;
@@ -8,13 +8,13 @@ use Tecnogo\MeliSdk\Config\AppId;
 use Tecnogo\MeliSdk\Config\AppSecret;
 use Tecnogo\MeliSdk\Config\SiteId;
 use Tecnogo\MeliSdk\Exception\MissingConfigurationException;
-use Tecnogo\MeliSdk\Test\Fixture\AppIdInjected;
-use Tecnogo\MeliSdk\Test\Fixture\AppSecretInjected;
-use Tecnogo\MeliSdk\Test\Fixture\ConfigInjected;
+use Tecnogo\MeliSdk\Test\Unit\Fixture\AppIdInjected;
+use Tecnogo\MeliSdk\Test\Unit\Fixture\AppSecretInjected;
+use Tecnogo\MeliSdk\Test\Unit\Fixture\ConfigInjected;
 use PHPUnit\Framework\TestCase;
 use Tecnogo\MeliSdk\Site\Site;
-use Tecnogo\MeliSdk\Test\Fixture\EmptyClassA;
-use Tecnogo\MeliSdk\Test\Fixture\EmptyClassB;
+use Tecnogo\MeliSdk\Test\Unit\Fixture\EmptyClassA;
+use Tecnogo\MeliSdk\Test\Unit\Fixture\EmptyClassB;
 
 class FactoryTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tecnogo\MeliSdk\Test\Fixture;
+namespace Tecnogo\MeliSdk\Test\Unit\Fixture;
 
 use Tecnogo\MeliSdk\Config\AppId;
 

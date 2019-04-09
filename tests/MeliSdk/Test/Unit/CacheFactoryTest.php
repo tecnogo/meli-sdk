@@ -1,6 +1,6 @@
 <?php
 
-namespace Tecnogo\MeliSdk\Test;
+namespace Tecnogo\MeliSdk\Test\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Psr\SimpleCache\CacheInterface;

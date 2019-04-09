@@ -3,19 +3,17 @@
 namespace Tecnogo\MeliSdk\Entity\Category\Attribute;
 
 /**
- * Interface Attribute
+ * Class NumberAttribute
  *
  * @package Tecnogo\MeliSdk\Entity\Category\Attribute
  */
-interface Attribute
+final class NumberAttribute extends AbstractAttribute
 {
     /**
      * @return string
      */
-    public function id();
-
-    /**
-     * @return string
-     */
-    public function type();
+    public function type()
+    {
+        return AttributeType::NUMBER;
+    }
 }

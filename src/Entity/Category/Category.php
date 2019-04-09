@@ -5,8 +5,8 @@ namespace Tecnogo\MeliSdk\Entity\Category;
 use Tecnogo\MeliSdk\Entity\AbstractEntity;
 use Tecnogo\MeliSdk\Entity\Category\Api\GetRawCategory;
 use Tecnogo\MeliSdk\Entity\Category\Api\GetRawCategoryAttributes;
-use Tecnogo\MeliSdk\Entity\Category\Attribute\Attribute;
 use Tecnogo\MeliSdk\Entity\Category\Attribute\AttributeCollection;
+use Tecnogo\MeliSdk\Entity\Category\Attribute\AttributeFactory;
 
 /**
  * Class Category
@@ -80,8 +80,8 @@ final class Category extends AbstractEntity
             'categoryId' => $this->id()
         ]);
 
-        return AttributeCollection::make($rawCategories, function($attribute) {
-            return $this->client->make(Attribute::class)->hydrate($attribute);
+        return AttributeCollection::make($rawCategories, function ($attribute) {
+            return $this->getAttributeFactory()->make($attribute);
         });
     }
 
@@ -113,7 +113,7 @@ final class Category extends AbstractEntity
             return null;
         }
 
-        return $path->slice(-2, 1)->first();
+        return $path->slice(-2, 1)->first(); // FIXME seems cryptic
     }
 
     /**
@@ -138,5 +138,15 @@ final class Category extends AbstractEntity
         }
 
         return parent::get($path, $fallback);
+    }
+
+    /**
+     * @return AttributeFactory
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     */
+    private function getAttributeFactory()
+    {
+        return $this->client->make(AttributeFactory::class);
     }
 }

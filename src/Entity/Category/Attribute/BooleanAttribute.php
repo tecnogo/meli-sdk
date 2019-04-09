@@ -3,19 +3,17 @@
 namespace Tecnogo\MeliSdk\Entity\Category\Attribute;
 
 /**
- * Interface Attribute
+ * Class BooleanAttribute
  *
  * @package Tecnogo\MeliSdk\Entity\Category\Attribute
  */
-interface Attribute
+final class BooleanAttribute extends AbstractAttribute
 {
     /**
      * @return string
      */
-    public function id();
-
-    /**
-     * @return string
-     */
-    public function type();
+    public function type()
+    {
+        return AttributeType::BOOLEAN;
+    }
 }

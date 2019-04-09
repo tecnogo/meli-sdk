@@ -7,7 +7,7 @@ namespace Tecnogo\MeliSdk\Entity\User;
  *
  * @package Tecnogo\MeliSdk\Entity\User
  */
-class Tag
+final class Tag
 {
     const USER_DEVELOPER = 'developer';
     const USER_INFO_VERIFIED = 'user_info_verified';

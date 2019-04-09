@@ -4,6 +4,9 @@ namespace Tecnogo\MeliSdk\Entity\Category;
 
 use Tecnogo\MeliSdk\Entity\AbstractEntity;
 use Tecnogo\MeliSdk\Entity\Category\Api\GetRawCategory;
+use Tecnogo\MeliSdk\Entity\Category\Api\GetRawCategoryAttributes;
+use Tecnogo\MeliSdk\Entity\Category\Attribute\Attribute;
+use Tecnogo\MeliSdk\Entity\Category\Attribute\AttributeCollection;
 
 /**
  * Class Category
@@ -23,7 +26,7 @@ final class Category extends AbstractEntity
      */
     public function id()
     {
-        return $this->source['id'] ?? $this->get('id');
+        return $this->id ?? $this->get('id');
     }
 
     /**
@@ -65,7 +68,7 @@ final class Category extends AbstractEntity
     }
 
     /**
-     * @return array
+     * @return AttributeCollection
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
@@ -73,7 +76,13 @@ final class Category extends AbstractEntity
      */
     public function attributes()
     {
-        return $this->get();
+        $rawCategories = $this->client->exec(GetRawCategoryAttributes::class, [
+            'categoryId' => $this->id()
+        ]);
+
+        return AttributeCollection::make($rawCategories, function($attribute) {
+            return $this->client->make(Attribute::class)->hydrate($attribute);
+        });
     }
 
     /**
@@ -110,7 +119,7 @@ final class Category extends AbstractEntity
     /**
      * @param string $path
      * @param null $fallback
-     * @return array
+     * @return mixed
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException

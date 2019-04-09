@@ -5,11 +5,13 @@ namespace Tecnogo\MeliSdk\Test\Resource\Cateogory;
 use Tecnogo\MeliSdk\Client;
 use Tecnogo\MeliSdk\Entity\Category\Category;
 use Tecnogo\MeliSdk\Test\Resource\AbstractResourceTest;
+use Tecnogo\MeliSdk\Test\Resource\CreateCallbackResponseGetRequest;
 use Tecnogo\MeliSdk\Test\Resource\CreateMapResponseGetRequest;
 
 class GetCategoryTest extends AbstractResourceTest
 {
     use CreateMapResponseGetRequest;
+    use CreateCallbackResponseGetRequest;
 
     /**
      * @param Client $client
@@ -22,6 +24,27 @@ class GetCategoryTest extends AbstractResourceTest
     {
         // We need to use any "getter" method to trigger the lazy loading
         $client->category('blah')->raw();
+    }
+
+    /**
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
+    public function testCreationWithIdDoesNotTriggerRequest()
+    {
+        $client = $this->getClientWithCallbackGetResponse(function () {
+            throw new \Exception('request_triggered');
+        });
+
+        $category = $client->category('MLA111111112');
+
+        $this->assertEquals($category->id(), 'MLA111111112');
+
+        $this->expectExceptionMessage('request_triggered');
+        $category->raw();
     }
 
     /**

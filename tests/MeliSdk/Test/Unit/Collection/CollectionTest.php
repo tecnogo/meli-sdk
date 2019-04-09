@@ -6,7 +6,7 @@ namespace Tecnogo\MeliSdk\Test\Unit\Collection;
 use PHPUnit\Framework\TestCase;
 use Tecnogo\MeliSdk\Collection\ListCollection;
 
-class TestCollection extends TestCase
+class CollectionTest extends TestCase
 {
     public function testFirstReturnsFirstItemInCollection()
     {
@@ -28,18 +28,9 @@ class TestCollection extends TestCase
 
     public function testEmptyCollectionIsNotEmpty()
     {
-        $colle = new ListCollection(['foo', 'bar']);
+        $collection = new ListCollection(['foo', 'bar']);
 
-        $this->assertFalse($colle->isEmpty());
-    }
-
-    public function testCollectionIsConstructed()
-    {
-        $collection = new ListCollection('foo');
-        $this->assertSame(['foo'], $collection->toArray());
-
-        $collection = new ListCollection(2);
-        $this->assertSame([2], $collection->toArray());
+        $this->assertFalse($collection->isEmpty());
     }
 
     public function testArrayAccessOffsetExists()
@@ -63,8 +54,25 @@ class TestCollection extends TestCase
 
         $collection->offsetSet(1, 'bar');
         $this->assertEquals('bar', $collection[1]);
+    }
 
-        $collection->offsetSet(null, 'qux');
-        $this->assertEquals('qux', $collection[2]);
+    public function testMapEmptyCollection()
+    {
+        $collection = new ListCollection();
+
+        $newCollection = $collection->map(function($c) { return $c * $c; });
+
+        $this->assertInstanceOf(ListCollection::class, $newCollection);
+        $this->assertCount(0, $newCollection);
+    }
+
+    public function testMapNonEmptyCollection()
+    {
+        $collection = new ListCollection([1, 2, 3, 4, 5]);
+
+        $newCollection = $collection->map(function($c) { return $c * $c; });
+
+        $this->assertInstanceOf(ListCollection::class, $newCollection);
+        $this->assertCount(5, $newCollection);
     }
 }

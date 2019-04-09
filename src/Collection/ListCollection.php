@@ -33,7 +33,7 @@ class ListCollection implements ArrayList, \ArrayAccess, \IteratorAggregate
         return new static($items);
     }
 
-    public function __construct($items = [])
+    public function __construct(array $items = [])
     {
         $this->items = array_values($items);
     }
@@ -237,7 +237,7 @@ class ListCollection implements ArrayList, \ArrayAccess, \IteratorAggregate
      */
     public function offsetGet($offset)
     {
-        return $this->items[$offset];
+        return $this->items[$offset] ?? null;
     }
 
     /**

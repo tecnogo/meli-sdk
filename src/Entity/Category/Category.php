@@ -19,12 +19,7 @@ final class Category extends AbstractEntity
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      */
     public function id()
     {
@@ -36,12 +31,7 @@ final class Category extends AbstractEntity
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      */
     public function name()
     {
@@ -53,12 +43,7 @@ final class Category extends AbstractEntity
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      */
     public function permalink()
     {
@@ -70,12 +55,7 @@ final class Category extends AbstractEntity
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      */
     public function children()
     {
@@ -89,12 +69,7 @@ final class Category extends AbstractEntity
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      */
     public function attributes()
     {
@@ -106,12 +81,7 @@ final class Category extends AbstractEntity
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      */
     public function path()
     {
@@ -124,12 +94,7 @@ final class Category extends AbstractEntity
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      */
     public function parent()
     {
@@ -149,12 +114,7 @@ final class Category extends AbstractEntity
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      */
     protected function get($path, $fallback = null)
     {

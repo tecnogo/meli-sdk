@@ -42,7 +42,7 @@ abstract class AbstractAttribute extends AbstractEntity implements Attribute
      */
     public function required()
     {
-        return $this->hasTag(AttributeTag::REQUIRED);
+        return $this->hasTag(AttributeTag::REQUIRED) || $this->hasTag(AttributeTag::CATALOG_REQUIRED);
     }
 
     /**

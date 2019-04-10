@@ -16,4 +16,12 @@ final class BooleanAttribute extends AbstractAttribute
     {
         return AttributeType::BOOLEAN;
     }
+
+    /**
+     * @return array
+     */
+    public function values()
+    {
+        return $this->get('values');
+    }
 }

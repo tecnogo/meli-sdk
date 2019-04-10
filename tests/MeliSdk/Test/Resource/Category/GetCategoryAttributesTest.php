@@ -103,6 +103,10 @@ class GetCategoryAttributesTest extends AbstractResourceTest
         $this->assertNotEmpty($attribute->name());
 
         switch ($attribute->type()) {
+            case AttributeType::BOOLEAN:
+                $this->assertIsArray($attribute->values());
+                $this->assertCount(2, $attribute->values());
+                break;
             case AttributeType::LIST:
                 $this->assertIsArray($attribute->values());
                 $this->assertNotEmpty($attribute->values());

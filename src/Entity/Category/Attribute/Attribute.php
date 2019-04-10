@@ -17,5 +17,10 @@ interface Attribute
     /**
      * @return string
      */
+    public function name();
+
+    /**
+     * @return string
+     */
     public function type();
 }

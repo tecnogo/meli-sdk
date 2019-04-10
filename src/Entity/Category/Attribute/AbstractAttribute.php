@@ -22,6 +22,14 @@ abstract class AbstractAttribute extends AbstractEntity implements Attribute
     }
 
     /**
+     * @return string
+     */
+    public function name()
+    {
+        return $this->get('name');
+    }
+
+    /**
      * @return array
      */
     public function tags()

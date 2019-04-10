@@ -99,6 +99,9 @@ class GetCategoryAttributesTest extends AbstractResourceTest
             "{$attribute->type()} is a valid attribute"
         );
 
+        $this->assertIsString($attribute->name());
+        $this->assertNotEmpty($attribute->name());
+
         switch ($attribute->type()) {
             case AttributeType::LIST:
                 $this->assertIsArray($attribute->values());

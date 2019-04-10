@@ -14,9 +14,8 @@ interface CacheFactoryInterface
 {
     /**
      * @param $namespace
+     * @param int|null $ttl
      * @return CacheInterface
-     * @throws \DI\DependencyException
-     * @throws \DI\NotFoundException
      */
-    public function get($namespace);
+    public function get($namespace, $ttl = null);
 }

@@ -21,16 +21,22 @@ class Cache implements CacheInterface
      * @var string
      */
     private $namespace;
+    /**
+     * @var int
+     */
+    private $ttl;
 
     /**
      * Cache constructor.
      * @param string $namespace
      * @param CacheInterface $cache
+     * @param int $ttl
      */
-    public function __construct($namespace, CacheInterface $cache)
+    public function __construct($namespace, CacheInterface $cache, $ttl)
     {
         $this->cache = $cache;
         $this->namespace = $namespace;
+        $this->ttl = $ttl;
     }
 
     /**
@@ -65,7 +71,7 @@ class Cache implements CacheInterface
      */
     public function set($key, $value, $ttl = null)
     {
-        return $this->cache->set($this->getKey($key), $value, $ttl);
+        return $this->cache->set($this->getKey($key), $value, $ttl ?? $this->ttl);
     }
 
     /**
@@ -131,7 +137,7 @@ class Cache implements CacheInterface
         $keys = array_keys($values);
         $values = array_values($values);
 
-        return $this->cache->setMultiple(array_combine($this->getKeys($keys), $values), $ttl);
+        return $this->cache->setMultiple(array_combine($this->getKeys($keys), $values), $ttl ?? $this->ttl);
     }
 
     /**

@@ -62,6 +62,7 @@ final class GetCurrencies extends AbstractTemplateAction
     /**
      * @return \Psr\SimpleCache\CacheInterface
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      */
     protected function createCache()
     {

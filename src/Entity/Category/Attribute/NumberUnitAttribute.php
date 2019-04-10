@@ -14,7 +14,7 @@ final class NumberUnitAttribute extends AbstractAttribute implements Attribute
      */
     public function type()
     {
-        return AttributeType::NUMBER;
+        return AttributeType::NUMBER_UNIT;
     }
 
     /**

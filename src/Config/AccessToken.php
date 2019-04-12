@@ -139,4 +139,24 @@ final class AccessToken
     {
         return !!$this->refreshToken;
     }
+
+    /**
+     * @return string|null
+     */
+    public function guessUserId()
+    {
+        $token = $this->get();
+
+        if (!$token) {
+            return null;
+        }
+
+        $fragments = explode('-', $token);
+
+        if (count($fragments) != 5) {
+            return null;
+        }
+
+        return $fragments[4];
+    }
 }

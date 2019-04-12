@@ -294,7 +294,7 @@ final class Client
     }
 
     /**
-     * @return mixed
+     * @return string
      * @throws Exception\MissingConfigurationException
      * @throws InvalidSiteIdException
      */

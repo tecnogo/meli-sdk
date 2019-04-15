@@ -10,7 +10,7 @@ class CacheFactoryTest extends TestCase
 {
     public function testComplianceWithPsr16()
     {
-        $factory = (new Client())->getFactory();
+        $factory = (Client::create())->getFactory();
         $cache = $factory->cache(__CLASS__);
 
         $this->assertInstanceOf(CacheInterface::class, $cache);
@@ -18,7 +18,7 @@ class CacheFactoryTest extends TestCase
 
     public function testCacheSharedForNamespace()
     {
-        $factory = (new Client())->getFactory();
+        $factory = (Client::create())->getFactory();
         $first = $factory->cache(__CLASS__);
         $second = $factory->cache(__CLASS__);
 
@@ -27,7 +27,7 @@ class CacheFactoryTest extends TestCase
 
     public function testCacheNotSharedForDifferentNamespaces()
     {
-        $factory = (new Client())->getFactory();
+        $factory = (Client::create())->getFactory();
         $first = $factory->cache('foo');
         $second = $factory->cache('bar');
 
@@ -36,7 +36,7 @@ class CacheFactoryTest extends TestCase
 
     public function testCacheApi()
     {
-        $factory = (new Client())->getFactory();
+        $factory = (Client::create())->getFactory();
         $cache = $factory->cache(__CLASS__);
 
         $key = 'value';

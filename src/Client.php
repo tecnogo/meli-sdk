@@ -31,6 +31,18 @@ final class Client
     private $auth;
 
     /**
+     * @param array $options
+     * @return Client
+     * @throws ContainerException
+     * @throws Exception\MissingConfigurationException
+     * @throws InvalidSiteIdException
+     */
+    public static function create(array $options = [])
+    {
+        return new static($options);
+    }
+
+    /**
      * Client constructor.
      *
      * @param string|null $appId
@@ -40,7 +52,7 @@ final class Client
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      * @throws Exception\MissingConfigurationException
      */
-    public function __construct(array $options = [])
+    private function __construct(array $options = [])
     {
         $this->createConfig($options);
         $this->createFactory($options['definitions'] ?? []);
@@ -230,6 +242,11 @@ final class Client
             \Tecnogo\MeliSdk\Entity\Picture\Api\GetRawPicture::class,
             $id
         );
+    }
+
+    public function search()
+    {
+
     }
 
     /**

@@ -71,7 +71,7 @@ class AttributeFactoryTest extends TestCase
      */
     private function createFactory()
     {
-        return (new Client())->make(AttributeFactory::class);
+        return (Client::create())->make(AttributeFactory::class);
     }
 
     /**

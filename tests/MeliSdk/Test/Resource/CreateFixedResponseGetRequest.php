@@ -19,7 +19,7 @@ trait CreateFixedResponseGetRequest
      */
     protected function getClientWithFixedGetResponse($httpCode, $response = '', array $options = [])
     {
-        return new Client($options + [
+        return Client::create($options + [
             'definitions' => [
                 Get::class => function ($resource, $payload = [], $options = []) use ($httpCode, $response) {
                     $handler = new FixedResponseGetRequest($resource);

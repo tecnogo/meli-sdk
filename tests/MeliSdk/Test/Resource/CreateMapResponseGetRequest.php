@@ -19,7 +19,7 @@ trait CreateMapResponseGetRequest
      */
     protected function getClientWithMapGetResponse($responseMap, array $options = [])
     {
-        return new Client($options + [
+        return Client::create($options + [
             'definitions' => [
                 Get::class => function ($resource, $payload = [], $options = []) use ($responseMap) {
                     $handler = new FixedResponseGetRequest($resource, $payload);

@@ -18,7 +18,7 @@ trait CreateCallbackResponseGetRequest
      */
     protected function getClientWithCallbackGetResponse($callback, array $options = [])
     {
-        return new Client($options + [
+        return Client::create($options + [
             'definitions' => [
                 Get::class => function ($resource, $payload = [], $options = []) use ($callback) {
                     $handler = new FixedResponseGetRequest($resource);

@@ -18,7 +18,7 @@ trait CreateMapResponsePostRequest
      */
     protected function getClientWithMapPostResponse($responseMap, $options = [])
     {
-        return new Client($options + [
+        return Client::create($options + [
             'definitions' => [
                 Post::class => function ($resource, $payload = [], $options = []) use ($responseMap) {
                     $handler = new FixedResponsePostRequest($resource, $payload);

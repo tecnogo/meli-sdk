@@ -27,7 +27,7 @@ class ApiFacadeTest extends TestCase
      */
     public function testInvalidHttpMethodThrowsException()
     {
-        $client = new Client();
+        $client = Client::create();
 
         $this->expectException(UnknownHttpMethodException::class);
 
@@ -48,7 +48,7 @@ class ApiFacadeTest extends TestCase
      */
     public function testActionRequiringMissingAppIdThrowsException()
     {
-        $client = new Client();
+        $client = Client::create();
 
         $this->expectException(MissingConfigurationException::class);
         $this->expectExceptionMessage('Missing configuration: app_id');
@@ -70,7 +70,7 @@ class ApiFacadeTest extends TestCase
      */
     public function testActionRequiringMissingAccessTokenThrowsException()
     {
-        $client = new Client();
+        $client = Client::create();
 
         $this->expectException(MissingConfigurationException::class);
         $this->expectExceptionMessage('Missing configuration: access_token');

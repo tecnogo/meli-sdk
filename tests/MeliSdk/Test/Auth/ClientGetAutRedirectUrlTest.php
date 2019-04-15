@@ -16,7 +16,7 @@ class ClientGetAutRedirectUrlTest extends TestCase
      */
     public function testDefaultConfiguration()
     {
-        $client = new Client();
+        $client = Client::create();
 
         $this->expectException(MissingConfigurationException::class);
         $this->expectExceptionMessage('Missing configuration: app_id');
@@ -31,7 +31,7 @@ class ClientGetAutRedirectUrlTest extends TestCase
      */
     public function testDefaultConfigurationWithAppIdAndRedirectUrl()
     {
-        $client = new Client([
+        $client = Client::create([
             'app_id' => 'wubba_lubba_dub',
             'redirect_url' => 'https://www.example.com/meli'
         ]);
@@ -52,7 +52,7 @@ class ClientGetAutRedirectUrlTest extends TestCase
      */
     public function testConfigWithSiteId()
     {
-        $client = new Client([
+        $client = Client::create([
             'site_id' => Site::MCO,
             'app_id' => 'wubba_lubba_dub',
             'redirect_url' => 'https://www.example.com/meli'

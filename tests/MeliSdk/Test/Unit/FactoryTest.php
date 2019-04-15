@@ -30,7 +30,7 @@ class FactoryTest extends TestCase
         $siteId = Site::MPT;
         $accessToken = sha1(rand(0, 1000));
 
-        $client = new Client([
+        $client = Client::create([
             'app_id' => $appId,
             'app_secret' => $appSecret,
             'site_id' => $siteId,
@@ -61,7 +61,7 @@ class FactoryTest extends TestCase
      */
     public function testMissingAppIdConfigInjection()
     {
-        $client = new Client();
+        $client = Client::create();
         $factory = $client->getFactory();
 
         $this->expectException(MissingConfigurationException::class);
@@ -77,7 +77,7 @@ class FactoryTest extends TestCase
      */
     public function testMissingAppSecretConfigInjection()
     {
-        $client = new Client();
+        $client = Client::create();
         $factory = $client->getFactory();
 
         $this->expectException(MissingConfigurationException::class);
@@ -93,7 +93,7 @@ class FactoryTest extends TestCase
      */
     public function testOverridingDefinitions()
     {
-        $client = new Client([
+        $client = Client::create([
             'definitions' => [
                 EmptyClassA::class => EmptyClassB::class
             ]

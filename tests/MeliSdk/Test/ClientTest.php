@@ -15,7 +15,7 @@ class ClientTest extends TestCase
      */
     public function testClientCreationWithoutParameters()
     {
-        $this->assertInstanceOf(Client::class, new Client());
+        $this->assertInstanceOf(Client::class, Client::create());
     }
 
     /**
@@ -27,7 +27,7 @@ class ClientTest extends TestCase
     {
         $this->expectException(\Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException::class);
 
-        new Client([
+        Client::create([
             'site_id' => 'MLNZ'
         ]);
     }
@@ -41,7 +41,7 @@ class ClientTest extends TestCase
      */
     public function testClientValidSiteId($siteId)
     {
-        $client = new Client([
+        $client = Client::create([
             'site_id' => $siteId
         ]);
 

@@ -28,7 +28,7 @@ class ActionTest extends TestCase
     public function testActionPayloadAltersCacheKey()
     {
         $firstAction = new DummyAction('blah', ['a' => 1]);
-        $secondAction = new DummyAction('blah'. ['a' => 2]);
+        $secondAction = new DummyAction('blah', ['a' => 2]);
 
         $this->assertNotEquals($firstAction->getCacheKey(), $secondAction->getCacheKey());
     }

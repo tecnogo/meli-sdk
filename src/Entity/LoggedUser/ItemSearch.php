@@ -95,6 +95,15 @@ final class ItemSearch
     }
 
     /**
+     * @param string $order
+     * @return ItemSearch
+     */
+    public function orderBy($order)
+    {
+        return $this->set('order', $order);
+    }
+
+    /**
      * @param int $page
      * @return ItemSearch
      */

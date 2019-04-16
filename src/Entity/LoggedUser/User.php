@@ -18,10 +18,11 @@ final class User extends AbstractEntity
 {
     /**
      * @return string|null
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      */
     public function id()
     {
-        return $this->get('id');
+        return $this->id ?? $this->client->getAccessToken()->guessUserId() ?? $this->get('id');
     }
 
     /**

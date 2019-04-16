@@ -14,6 +14,10 @@
 
 ### Instalación
 
+Dado el estado actual de desarrollo, *requiere* [configurar la estabilidad minima](https://getcomposer.org/doc/04-schema.md#minimum-stability) del proyecto a `dev`.
+
+Importar la libreria utilizando composer:
+
 `composer require tecnogo/meli-sdk`
 
 ### Configuración
@@ -63,5 +67,7 @@ $bookmarks->each(function (\Tecnogo\MeliSdk\Entity\LoggedUser\Bookmark $bookmark
 
 
 ### Licencia
+
+© 2019 Valentin Starck <valentin.starck@gmail.com>
 
 Este proyecto está bajo licencia MIT. Para más información: [LICENSE](https://raw.githubusercontent.com/tecnogo/meli-sdk/master/LICENSE)

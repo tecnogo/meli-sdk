@@ -69,6 +69,7 @@ class GetItemTest extends AbstractResourceTest
         $this->assertEquals($item->id(), 'MLA111111111');
         $this->assertEquals($item->title(), 'Casa En Venta En Springfield Calle Falsa 123');
         $this->assertEquals($item->price(), 15000);
+        $this->assertEquals($item->soldQuantity(), 0);
         $this->assertEquals(
             $item->permalink(),
             'https://casa.mercadolibre.com.ar/MLA-111111111-casa-en-venta-en-springfield-calle-falsa-123-_JM'

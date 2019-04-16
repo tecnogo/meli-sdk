@@ -82,6 +82,14 @@ final class Item extends AbstractEntity
     }
 
     /**
+     * @return int
+     */
+    public function soldQuantity()
+    {
+        return $this->get('sold_quantity');
+    }
+
+    /**
      * @return string|null
      */
     public function createdAt()

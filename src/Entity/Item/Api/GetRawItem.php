@@ -15,6 +15,8 @@ use Tecnogo\MeliSdk\Request\Method;
  */
 class GetRawItem extends AbstractTemplateAction
 {
+    const CACHE_TTL_IN_SECONDS = 180;
+
     /**
      * @var string
      */
@@ -58,6 +60,6 @@ class GetRawItem extends AbstractTemplateAction
      */
     protected function createCache()
     {
-        return $this->factory->cache(static::class);
+        return $this->factory->cache(static::class, static::CACHE_TTL_IN_SECONDS);
     }
 }

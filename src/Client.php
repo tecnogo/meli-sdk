@@ -244,11 +244,6 @@ final class Client
         );
     }
 
-    public function search()
-    {
-
-    }
-
     /**
      * @param $entity
      * @param $action

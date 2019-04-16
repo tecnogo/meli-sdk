@@ -57,13 +57,10 @@ $bookmarks->each(function (\Tecnogo\MeliSdk\Entity\LoggedUser\Bookmark $bookmark
 
 ### Ejemplos
 
-#### [Lumen: Predicción de categoría de item](https://github.com/tecnogo/meli-examples-category-prediction)
+ * [Laravel: Listado de publicaciones de usuario](https://github.com/tecnogo/meli-examples-my-items)
+ * [Lumen: Predicción de categoría de item](https://github.com/tecnogo/meli-examples-category-prediction)
+ * [Symfony4: Generación de formularios de atributos](https://github.com/tecnogo/meli-examples-category-attr-form)
 
-<img src="http://i.imgur.com/oRDGi7p.png" />
-
-#### [Symfony4: Generación de formularios de atributos](https://github.com/tecnogo/meli-examples-category-attr-form)
-
-<img src="http://i.imgur.com/4tXjUTg.png"/>
 
 ### Licencia
 

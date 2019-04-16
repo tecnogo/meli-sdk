@@ -54,4 +54,9 @@ interface Action
      * @return CacheInterface
      */
     public function cache();
+
+    /**
+     * @return string
+     */
+    public function getCacheKey();
 }

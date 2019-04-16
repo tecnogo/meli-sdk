@@ -74,4 +74,12 @@ class RequiresAppIdMethodAction implements Action
     {
         return new NullCache();
     }
+
+    /**
+     * @return string
+     */
+    public function getCacheKey()
+    {
+        return 'wubba_lubba_dub';
+    }
 }

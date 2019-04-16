@@ -122,7 +122,7 @@ final class Facade
      */
     public function exec(Action $action)
     {
-        $cacheKey = $action->getMethod() . $action->getResource();
+        $cacheKey = $action->getCacheKey();
         $cache = $action->cache();
 
         // We cache only the successful requests

@@ -71,4 +71,12 @@ abstract class AbstractTemplateAction implements Action
     {
         return new NullCache();
     }
+
+    /**
+     * @return string
+     */
+    public function getCacheKey()
+    {
+        return md5($this->getMethod() . $this->getResource() . json_encode($this->getPayload()));
+    }
 }

@@ -57,7 +57,7 @@ final class ItemSearch
      */
     public function search($query)
     {
-        $this->query = $query;
+        $this->set('q', $query);
 
         return $this;
     }

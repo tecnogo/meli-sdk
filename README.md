@@ -1,7 +1,3 @@
-<p align="center">
-<img src="https://avatars1.githubusercontent.com/u/49149236"/>
-</p>
-
 ## MeliSdk: El API de Mercadolibre, facil.  
 
 [![Build Status](https://travis-ci.org/tecnogo/meli-sdk.svg?branch=master)](https://travis-ci.org/tecnogo/meli-sdk)  [![License](https://poser.pugx.org/tecnogo/meli-sdk/license)](https://packagist.org/packages/phpunit/phpunit)

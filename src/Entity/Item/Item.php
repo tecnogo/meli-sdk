@@ -177,4 +177,12 @@ final class Item extends AbstractEntity
 
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function condition()
+    {
+        return $this->get('condition');
+    }
 }

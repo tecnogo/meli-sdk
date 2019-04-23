@@ -6,6 +6,7 @@ use Tecnogo\MeliSdk\Client;
 use Tecnogo\MeliSdk\Entity\Category\Category;
 use Tecnogo\MeliSdk\Entity\Item\Attribute;
 use Tecnogo\MeliSdk\Entity\Item\AttributeCollection;
+use Tecnogo\MeliSdk\Entity\Item\ItemCondition;
 use Tecnogo\MeliSdk\Entity\Item\Item;
 use Tecnogo\MeliSdk\Entity\Picture\Collection;
 use Tecnogo\MeliSdk\Entity\Picture\Picture;
@@ -74,6 +75,7 @@ class GetItemTest extends AbstractResourceTest
             $item->permalink(),
             'https://casa.mercadolibre.com.ar/MLA-111111111-casa-en-venta-en-springfield-calle-falsa-123-_JM'
         );
+        $this->assertTrue(ItemCondition::validate($item->condition()));
     }
 
     /**

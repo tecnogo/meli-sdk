@@ -11,7 +11,7 @@ use Tecnogo\MeliSdk\Entity\AbstractEntity;
  *
  * @internal
  */
-class CategoryPrediction extends AbstractEntity
+final class CategoryPrediction extends AbstractEntity
 {
     /**
      * @return string|null

@@ -11,7 +11,7 @@ use Tecnogo\MeliSdk\Entity\AbstractEntity;
  *
  * @internal
  */
-class Bookmark extends AbstractEntity
+final class Bookmark extends AbstractEntity
 {
     /**
      * @return string

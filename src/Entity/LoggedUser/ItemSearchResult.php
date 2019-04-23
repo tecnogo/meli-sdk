@@ -9,7 +9,11 @@ use Tecnogo\MeliSdk\Entity\Item\Collection;
 use Tecnogo\MeliSdk\Entity\Item\Item;
 use Traversable;
 
-class ItemSearchResult extends AbstractEntity implements ArrayList
+/**
+ * Class ItemSearchResult
+ * @package Tecnogo\MeliSdk\Entity\LoggedUser
+ */
+final class ItemSearchResult extends AbstractEntity implements ArrayList
 {
     /**
      * @return int

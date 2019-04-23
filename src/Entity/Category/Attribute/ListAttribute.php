@@ -16,12 +16,4 @@ final class ListAttribute extends AbstractAttribute implements Attribute
     {
         return AttributeType::LIST;
     }
-
-    /**
-     * @return array
-     */
-    public function values()
-    {
-        return $this->get('values');
-    }
 }

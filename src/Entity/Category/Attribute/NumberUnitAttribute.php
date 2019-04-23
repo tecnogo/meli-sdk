@@ -22,7 +22,7 @@ final class NumberUnitAttribute extends AbstractAttribute implements Attribute
      */
     public function allowedUnits()
     {
-        return $this->get('allowed_units');
+        return $this->get('allowed_units', []);
     }
 
     /**
@@ -30,6 +30,6 @@ final class NumberUnitAttribute extends AbstractAttribute implements Attribute
      */
     public function defaultUnit()
     {
-        return $this->get('default_unit');
+        return $this->get('default_unit', []);
     }
 }

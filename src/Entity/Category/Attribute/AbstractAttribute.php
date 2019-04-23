@@ -53,4 +53,12 @@ abstract class AbstractAttribute extends AbstractEntity implements Attribute
     {
         return in_array($tag, array_keys($this->tags()));
     }
+
+    /**
+     * @return array
+     */
+    public function values()
+    {
+        return $this->get('values', []);
+    }
 }

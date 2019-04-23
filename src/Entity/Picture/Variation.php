@@ -9,6 +9,9 @@ class Variation
      */
     private $source;
 
+    const WIDTH = 0;
+    const HEIGHT = 1;
+
     public function __construct($source = [])
     {
         $this->source = $source;
@@ -43,7 +46,7 @@ class Variation
      */
     public function width()
     {
-        return $this->sizeComponent(0);
+        return $this->sizeComponent(static::WIDTH);
     }
 
     /**
@@ -51,7 +54,7 @@ class Variation
      */
     public function height()
     {
-        return $this->sizeComponent(1);
+        return $this->sizeComponent(static::HEIGHT);
     }
 
     /**

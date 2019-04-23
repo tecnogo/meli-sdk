@@ -174,6 +174,18 @@ final class Client
     }
 
     /**
+     * @return \Tecnogo\MeliSdk\Entity\ListingType\Collection
+     * @throws ContainerException
+     * @throws Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
+    public function listingTypes()
+    {
+        return $this->exec(\Tecnogo\MeliSdk\Entity\ListingType\Api\GetListingTypes::class);
+    }
+
+    /**
      * @return \Tecnogo\MeliSdk\Entity\LoggedUser\NotificationCollection
      * @throws ContainerException
      * @throws Exception\MissingConfigurationException

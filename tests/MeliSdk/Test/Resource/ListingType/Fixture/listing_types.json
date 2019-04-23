@@ -1,0 +1,37 @@
+[
+  {
+    "site_id": "MLA",
+    "id": "gold_pro",
+    "name": "Premium"
+  },
+  {
+    "site_id": "MLA",
+    "id": "gold_premium",
+    "name": "Oro Premium"
+  },
+  {
+    "site_id": "MLA",
+    "id": "gold_special",
+    "name": "Clásica"
+  },
+  {
+    "site_id": "MLA",
+    "id": "gold",
+    "name": "Oro"
+  },
+  {
+    "site_id": "MLA",
+    "id": "silver",
+    "name": "Plata"
+  },
+  {
+    "site_id": "MLA",
+    "id": "bronze",
+    "name": "Bronce"
+  },
+  {
+    "site_id": "MLA",
+    "id": "free",
+    "name": "Gratuita"
+  }
+]

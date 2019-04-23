@@ -4,6 +4,7 @@ namespace Tecnogo\MeliSdk\Test\Resource\Cateogory;
 
 use Tecnogo\MeliSdk\Client;
 use Tecnogo\MeliSdk\Entity\Category\Category;
+use Tecnogo\MeliSdk\Entity\Category\Settings;
 use Tecnogo\MeliSdk\Test\Resource\AbstractResourceTest;
 use Tecnogo\MeliSdk\Test\Resource\CreateCallbackResponseGetRequest;
 use Tecnogo\MeliSdk\Test\Resource\CreateMapResponseGetRequest;
@@ -66,6 +67,8 @@ class GetCategoryTest extends AbstractResourceTest
         $this->assertInstanceOf(Category::class, $category);
         $this->assertEquals($category->id(), 'MLA5725');
         $this->assertEquals($category->name(), 'Accesorios para Vehículos');
+        $this->assertInstanceOf(Settings::class, $category->settings());
+        $this->assertFalse($category->settings()->adultContent());
     }
 
     /**

@@ -117,6 +117,18 @@ final class Category extends AbstractEntity
     }
 
     /**
+     * @return Settings
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     */
+    public function settings()
+    {
+        return $this->client->make(Settings::class)->hydrate($this->get('settings', []));
+    }
+
+    /**
      * @param string $path
      * @param null $fallback
      * @return mixed

@@ -7,7 +7,7 @@ namespace Tecnogo\MeliSdk\Entity\Category\Attribute;
  *
  * @package Tecnogo\MeliSdk\Entity\Category\Attribute
  */
-class AttributeType
+final class AttributeType
 {
     const BOOLEAN = 'boolean';
     const LIST = 'list';
@@ -15,6 +15,10 @@ class AttributeType
     const NUMBER_UNIT = 'number_unit';
     const STRING = 'string';
 
+    /**
+     * @param $type
+     * @return bool
+     */
     public static function validate($type)
     {
         $type = strtoupper($type);

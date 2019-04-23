@@ -120,12 +120,6 @@ final class Item extends AbstractEntity
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      */
     public function category()

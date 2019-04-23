@@ -6,6 +6,7 @@ use Tecnogo\MeliSdk\Config\Config;
 use Tecnogo\MeliSdk\Api\Action;
 use Tecnogo\MeliSdk\Api\Facade;
 use Tecnogo\MeliSdk\Client\Factory;
+use Tecnogo\MeliSdk\Config\SiteId;
 use Tecnogo\MeliSdk\Exception\ContainerException;
 use Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException;
 use Tecnogo\MeliSdk\Site\Site;
@@ -174,15 +175,18 @@ final class Client
     }
 
     /**
+     * @param SiteId|null $siteId
      * @return \Tecnogo\MeliSdk\Entity\ListingType\Collection
      * @throws ContainerException
      * @throws Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws Request\Exception\RequestException
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function listingTypes()
+    public function listingTypes(SiteId $siteId = null)
     {
-        return $this->exec(\Tecnogo\MeliSdk\Entity\ListingType\Api\GetListingTypes::class);
+        $payload = $siteId ? ['siteId' => $siteId] : [];
+
+        return $this->exec(\Tecnogo\MeliSdk\Entity\ListingType\Api\GetListingTypes::class, $payload);
     }
 
     /**

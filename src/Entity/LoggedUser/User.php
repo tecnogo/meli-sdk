@@ -3,7 +3,6 @@
 namespace Tecnogo\MeliSdk\Entity\LoggedUser;
 
 use Tecnogo\MeliSdk\Entity\AbstractEntity;
-use Tecnogo\MeliSdk\Entity\Item\Collection;
 use Tecnogo\MeliSdk\Entity\LoggedUser\Api\GetBookmarks;
 use Tecnogo\MeliSdk\Entity\LoggedUser\Api\GetNotifications;
 use Tecnogo\MeliSdk\Entity\User\Api\GetUserBrands;

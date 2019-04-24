@@ -113,6 +113,9 @@ abstract class AbstractEntity implements Entity
         return $this->client->make($action)->exec();
     }
 
+    /**
+     * @param array|callable $source
+     */
     private function setSource($source)
     {
         if (is_callable($source)) {

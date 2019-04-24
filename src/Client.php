@@ -7,6 +7,7 @@ use Tecnogo\MeliSdk\Api\Action;
 use Tecnogo\MeliSdk\Api\Facade;
 use Tecnogo\MeliSdk\Client\Factory;
 use Tecnogo\MeliSdk\Config\SiteId;
+use Tecnogo\MeliSdk\Entity\Site\Api\GetSites;
 use Tecnogo\MeliSdk\Exception\ContainerException;
 use Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException;
 use Tecnogo\MeliSdk\Site\Site;
@@ -103,6 +104,24 @@ final class Client
     }
 
     /**
+     * @return Entity\Site\Collection
+     * @throws ContainerException
+     * @throws Exception\MissingConfigurationException
+     * @throws Request\Exception\RequestException
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
+    public function sites()
+    {
+        return \Tecnogo\MeliSdk\Entity\Site\Collection::make($this->exec(GetSites::class), function ($site) {
+            return $this->lazyEntity(
+                \Tecnogo\MeliSdk\Entity\Site\Site::class,
+                \Tecnogo\MeliSdk\Entity\Site\Api\GetSite::class,
+                $site['id']
+            );
+        });
+    }
+
+    /**
      * @return \Tecnogo\MeliSdk\Entity\LoggedUser\User:
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws ContainerException
@@ -134,15 +153,18 @@ final class Client
     }
 
     /**
+     * @param SiteId|null $siteId
      * @return \Tecnogo\MeliSdk\Entity\Category\Collection
      * @throws ContainerException
      * @throws Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws Request\Exception\RequestException
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function categories()
+    public function categories(SiteId $siteId = null)
     {
-        return $this->exec(\Tecnogo\MeliSdk\Entity\Category\Api\GetCategories::class);
+        $payload = $siteId ? ['siteId' => $siteId] : [];
+
+        return $this->exec(\Tecnogo\MeliSdk\Entity\Category\Api\GetCategories::class, $payload);
     }
 
     /**

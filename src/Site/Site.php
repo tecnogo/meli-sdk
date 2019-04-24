@@ -24,6 +24,7 @@ final class Site
     const MPE = 'MPE';
     const MPT = 'MPT';
     const MRD = 'MRD';
+    const MGT = 'MGT';
 
     /**
      * @param $siteId

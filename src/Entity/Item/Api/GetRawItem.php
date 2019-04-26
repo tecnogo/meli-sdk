@@ -3,6 +3,7 @@
 namespace Tecnogo\MeliSdk\Entity\Item\Api;
 
 use Tecnogo\MeliSdk\Api\AbstractTemplateAction;
+use Tecnogo\MeliSdk\Cache\CacheStrategy;
 use Tecnogo\MeliSdk\Client\Factory;
 use Tecnogo\MeliSdk\Request\Method;
 
@@ -15,8 +16,6 @@ use Tecnogo\MeliSdk\Request\Method;
  */
 class GetRawItem extends AbstractTemplateAction
 {
-    const CACHE_TTL_IN_SECONDS = 180;
-
     /**
      * @var string
      */
@@ -54,12 +53,10 @@ class GetRawItem extends AbstractTemplateAction
     }
 
     /**
-     * @return \Psr\SimpleCache\CacheInterface
-     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
-     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @return string
      */
-    protected function createCache()
+    public function getCacheStrategy()
     {
-        return $this->factory->cache(static::class, static::CACHE_TTL_IN_SECONDS);
+        return CacheStrategy::BRIEF;
     }
 }

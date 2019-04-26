@@ -25,6 +25,12 @@ final class Site
     const MPT = 'MPT';
     const MRD = 'MRD';
     const MGT = 'MGT';
+    const MNI = 'MNI';
+    const MCU = 'MCU';
+    const MSV = 'MSV';
+    const MHN = 'MHN';
+    const MPY = 'MPY';
+    const MBO = 'MBO';
 
     /**
      * @param $siteId

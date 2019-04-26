@@ -21,10 +21,6 @@ use Tecnogo\MeliSdk\Request\Post;
  */
 final class Facade
 {
-    const API_URL = 'https://api.mercadolibre.com/';
-    const AUTH_URL = 'https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=';
-    const OAUT_URL = 'https://auth.mercadolibre.com.ar/oauth/token';
-
     /**
      * @var Factory
      */

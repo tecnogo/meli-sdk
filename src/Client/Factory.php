@@ -134,14 +134,13 @@ class Factory
 
     /**
      * @param $namespace
-     * @param int|null $ttl
      * @return CacheInterface
      * @throws ContainerException
      * @throws MissingConfigurationException
      */
-    public function cache($namespace, $ttl = null)
+    public function cache($namespace = CacheFactory::SHARED_CACHE_KEY)
     {
-        return $this->cacheFactory->get($namespace, $ttl);
+        return $this->cacheFactory->get($namespace);
     }
 
     /**

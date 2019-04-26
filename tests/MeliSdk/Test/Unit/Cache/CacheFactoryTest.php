@@ -1,15 +1,19 @@
 <?php
 
-namespace Tecnogo\MeliSdk\Test\Unit;
+namespace Tecnogo\MeliSdk\Test\Unit\Cache;
 
 use PHPUnit\Framework\TestCase;
 use Psr\SimpleCache\CacheInterface;
+use Symfony\Component\Cache\Simple\ArrayCache;
 use Symfony\Component\Cache\Simple\FilesystemCache;
 use Symfony\Component\Cache\Simple\NullCache;
 use Tecnogo\MeliSdk\Client;
+use Tecnogo\MeliSdk\Test\Resource\CreateMapResponseGetRequest;
 
 class CacheFactoryTest extends TestCase
 {
+    use CreateMapResponseGetRequest;
+
     /**
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
@@ -17,8 +21,8 @@ class CacheFactoryTest extends TestCase
      */
     public function testComplianceWithPsr16()
     {
-        $factory = (Client::create())->getFactory();
-        $cache = $factory->cache(__CLASS__);
+        $factory = Client::create()->getFactory();
+        $cache = $factory->cache();
 
         $this->assertInstanceOf(CacheInterface::class, $cache);
     }
@@ -106,21 +110,26 @@ class CacheFactoryTest extends TestCase
 
     /**
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      */
-    public function testCacheApi()
+    public function testCacheClear()
     {
-        $factory = (Client::create())->getFactory();
-        $cache = $factory->cache(__CLASS__);
+        $cache = new ArrayCache();
 
-        $key = 'value';
-        $value = sha1(rand(1, 1000));
+        $client = $this->getClientWithMapGetResponse([
+            'sites'=> [200, '[]']
+        ], ['cache' => ['shared' => $cache]]);
 
-        $this->assertTrue($cache->set($key, $value));
-        $this->assertTrue($cache->has($key));
-        $this->assertEquals($cache->get($key), $value);
+        $this->assertEmpty($cache->getValues());
 
+        $client->sites();
+        $this->assertCount(1, $cache->getValues());
+
+        $client->clearCache();
+        $this->assertEmpty($cache->getValues());
     }
 }

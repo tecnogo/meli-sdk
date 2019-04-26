@@ -388,8 +388,12 @@ final class Client
         return $this;
     }
 
+    /**
+     * @throws ContainerException
+     * @throws Exception\MissingConfigurationException
+     */
     public function clearCache()
     {
-
+        $this->factory->cache()->clear();
     }
 }

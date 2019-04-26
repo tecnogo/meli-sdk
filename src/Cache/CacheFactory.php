@@ -13,6 +13,8 @@ use Tecnogo\MeliSdk\Config\Config;
  */
 class CacheFactory implements CacheFactoryInterface
 {
+    const SHARED_CACHE_KEY = 'shared';
+
     /**
      * @var Config
      */

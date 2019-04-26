@@ -1,6 +1,6 @@
 ## MeliSdk: El API de Mercadolibre, facil.  
 
-[![Build Status](https://travis-ci.org/tecnogo/meli-sdk.svg?branch=master)](https://travis-ci.org/tecnogo/meli-sdk)  [![License](https://poser.pugx.org/tecnogo/meli-sdk/license)](https://packagist.org/packages/phpunit/phpunit)
+[![Build Status](https://travis-ci.org/tecnogo/meli-sdk.svg?branch=master)](https://travis-ci.org/tecnogo/meli-sdk)  [![License](https://poser.pugx.org/tecnogo/meli-sdk/license)](https://packagist.org/packages/tecnogo/melisdk)
 
 ### Requerimientos
 

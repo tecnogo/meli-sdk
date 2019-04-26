@@ -207,7 +207,7 @@ final class Facade
      * @return string
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      */
-    public function getCacheKey(Action $action)
+    private function getCacheKey(Action $action)
     {
         $fragments = [];
 

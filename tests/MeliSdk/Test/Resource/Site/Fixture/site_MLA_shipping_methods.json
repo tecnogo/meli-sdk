@@ -1,0 +1,350 @@
+[
+  {
+    "id": 800,
+    "name": "Rápido a domicilio",
+    "type": "next_day",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+      "country"
+    ],
+    "shipping_modes": [
+      "me2"
+    ],
+    "company_id": 3,
+    "company_name": "Motonorte",
+    "min_time": 6,
+    "max_time": 12,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 502845,
+    "name": "Retiro en sucursal OCA Prioritario",
+    "type": "express",
+    "deliver_to": "agency",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+      "country"
+    ],
+    "shipping_modes": null,
+    "company_id": null,
+    "company_name": null,
+    "min_time": null,
+    "max_time": null,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 501045,
+    "name": "Retiro en OCA",
+    "type": "standard",
+    "deliver_to": "agency",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+      "country"
+    ],
+    "shipping_modes": [
+      "me2"
+    ],
+    "company_id": 17500240,
+    "company_name": "OCA",
+    "min_time": null,
+    "max_time": null,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 501145,
+    "name": "Estándar",
+    "type": "standard",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+      "country"
+    ],
+    "shipping_modes": [
+      "me1"
+    ],
+    "company_id": null,
+    "company_name": null,
+    "min_time": null,
+    "max_time": null,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 505545,
+    "name": "Envío internacional",
+    "type": "standard",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+    ],
+    "shipping_modes": [
+      "me1"
+    ],
+    "company_id": 17502940,
+    "company_name": "CBT Argentina",
+    "min_time": null,
+    "max_time": null,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 505045,
+    "name": "Retiro en Andreani",
+    "type": "standard",
+    "deliver_to": "agency",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+    ],
+    "shipping_modes": [
+      "me2"
+    ],
+    "company_id": 17502540,
+    "company_name": "Andreani",
+    "min_time": null,
+    "max_time": null,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 504845,
+    "name": "Seller local",
+    "type": "standard",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+    ],
+    "shipping_modes": [
+      "me1"
+    ],
+    "company_id": null,
+    "company_name": null,
+    "min_time": null,
+    "max_time": null,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 506245,
+    "name": "Rápido a domicilio",
+    "type": "super_express",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+    ],
+    "shipping_modes": [
+      "me2"
+    ],
+    "company_id": null,
+    "company_name": null,
+    "min_time": 0,
+    "max_time": 24,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 501146,
+    "name": "Prioritario",
+    "type": "express",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+      "country"
+    ],
+    "shipping_modes": [
+      "me1"
+    ],
+    "company_id": null,
+    "company_name": null,
+    "min_time": null,
+    "max_time": null,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 73330,
+    "name": "Prioritario a domicilio",
+    "type": "express",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+      "country"
+    ],
+    "shipping_modes": [
+      "me2"
+    ],
+    "company_id": 17500240,
+    "company_name": "OCA",
+    "min_time": 0,
+    "max_time": 72,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 73328,
+    "name": "Normal a domicilio",
+    "type": "standard",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+      "country"
+    ],
+    "shipping_modes": [
+      "me2"
+    ],
+    "company_id": 17500240,
+    "company_name": "OCA",
+    "min_time": 72,
+    "max_time": null,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 504245,
+    "name": "Normal a domicilio",
+    "type": "standard",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+      "country"
+    ],
+    "shipping_modes": [
+      "me2"
+    ],
+    "company_id": 17500940,
+    "company_name": "MercadoEnvios",
+    "min_time": 72,
+    "max_time": null,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 506345,
+    "name": "Rápido a domicilio",
+    "type": "super_express",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+    ],
+    "shipping_modes": [
+      "me2"
+    ],
+    "company_id": null,
+    "company_name": null,
+    "min_time": 0,
+    "max_time": 48,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 507045,
+    "name": "Test Flex [NO USAR]",
+    "type": "super_express",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+    ],
+    "shipping_modes": [
+      "me2"
+    ],
+    "company_id": null,
+    "company_name": null,
+    "min_time": 2160,
+    "max_time": 2400,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 506445,
+    "name": "Rápido a domicilio",
+    "type": "super_express",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+    ],
+    "shipping_modes": [
+      "me2"
+    ],
+    "company_id": null,
+    "company_name": null,
+    "min_time": 24,
+    "max_time": 48,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 503045,
+    "name": "Retiro en Correo Argentino",
+    "type": "standard",
+    "deliver_to": "agency",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+    ],
+    "shipping_modes": [
+      "me2"
+    ],
+    "company_id": 17501440,
+    "company_name": "Correo Argentino",
+    "min_time": null,
+    "max_time": null,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 504945,
+    "name": "Normal a domicilio",
+    "type": "standard",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+      "no"
+    ],
+    "shipping_modes": [
+      "me2"
+    ],
+    "company_id": 17502540,
+    "company_name": "Andreani",
+    "min_time": null,
+    "max_time": null,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 505645,
+    "name": "Envío internacional",
+    "type": "standard",
+    "deliver_to": "address",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+    ],
+    "shipping_modes": [
+      "me1"
+    ],
+    "company_id": 17502940,
+    "company_name": "CBT Argentina",
+    "min_time": null,
+    "max_time": null,
+    "currency_id": "ARS"
+  },
+  {
+    "id": 504345,
+    "name": "Retiro en una sucursal",
+    "type": "standard",
+    "deliver_to": "agency",
+    "status": "active",
+    "site_id": "MLA",
+    "free_options": [
+      "no"
+    ],
+    "shipping_modes": null,
+    "company_id": 17500940,
+    "company_name": "MercadoEnvios",
+    "min_time": null,
+    "max_time": null,
+    "currency_id": "ARS"
+  }
+]

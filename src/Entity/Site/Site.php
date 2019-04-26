@@ -5,6 +5,8 @@ namespace Tecnogo\MeliSdk\Entity\Site;
 use Tecnogo\MeliSdk\Entity\AbstractEntity;
 use Tecnogo\MeliSdk\Entity\Category\Category;
 use Tecnogo\MeliSdk\Entity\Currency\Currency;
+use Tecnogo\MeliSdk\Entity\ShippingMethod\Api\GetSiteShippingMethods;
+use Tecnogo\MeliSdk\Entity\ShippingMethod\ShippingMethod;
 
 /**
  * Class Site
@@ -60,5 +62,35 @@ final class Site extends AbstractEntity
         return \Tecnogo\MeliSdk\Entity\Currency\Collection::make($this->get('currencies'), function ($currency) {
             return $this->client->getFactory()->hydrate(Currency::class, $currency);
         });
+    }
+
+    /**
+     * @return \Tecnogo\MeliSdk\Entity\ShippingMethod\Collection
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     */
+    public function shippingMethods()
+    {
+        $rawShippingMethods = $this->client->exec(GetSiteShippingMethods::class, ['siteId' => $this->id()]);
+
+        return \Tecnogo\MeliSdk\Entity\ShippingMethod\Collection::make($rawShippingMethods, function ($shippingMethod) {
+            return $this->client->make(ShippingMethod::class)->hydrate($shippingMethod);
+        });
+    }
+
+    /**
+     * @return \Tecnogo\MeliSdk\Entity\ListingType\Collection
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     */
+    public function listingTypes()
+    {
+        return $this->client->listingTypes($this->id());
     }
 }

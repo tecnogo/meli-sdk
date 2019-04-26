@@ -2,7 +2,6 @@
 
 namespace Tecnogo\MeliSdk\Entity\Site;
 
-use Tecnogo\MeliSdk\Config\SiteId;
 use Tecnogo\MeliSdk\Entity\AbstractEntity;
 use Tecnogo\MeliSdk\Entity\Category\Category;
 use Tecnogo\MeliSdk\Entity\Currency\Currency;

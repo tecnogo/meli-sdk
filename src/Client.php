@@ -120,7 +120,7 @@ final class Client
 
     /**
      * @param string|SiteId $siteId
-     * @return Entity\Site\Collection
+     * @return Entity\Site\Site
      * @throws ContainerException
      * @throws Exception\MissingConfigurationException
      * @throws InvalidSiteIdException
@@ -212,7 +212,7 @@ final class Client
     }
 
     /**
-     * @param SiteId|null $siteId
+     * @param SiteId|string|null $siteId
      * @return \Tecnogo\MeliSdk\Entity\ListingType\Collection
      * @throws ContainerException
      * @throws Exception\MissingConfigurationException

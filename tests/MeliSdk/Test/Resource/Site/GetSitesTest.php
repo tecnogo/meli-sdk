@@ -2,6 +2,7 @@
 
 namespace Tecnogo\MeliSdk\Test\Resource\Site;
 
+use Symfony\Component\Cache\Simple\ArrayCache;
 use Tecnogo\MeliSdk\Client;
 use Tecnogo\MeliSdk\Entity\Site\Collection;
 use Tecnogo\MeliSdk\Entity\Site\Site;
@@ -20,10 +21,10 @@ class GetSitesTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     protected function triggerRequestForErrorResponses(Client $client)
     {
-        $this->clearCache($client);
         $client->sites();
     }
 
@@ -33,6 +34,7 @@ class GetSitesTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function testRequestCache()
     {
@@ -42,14 +44,12 @@ class GetSitesTest extends AbstractResourceTest
         $client = $this->getClientWithCallbackGetResponse(function () use ($response, &$counter) {
             $counter++;
             return [200, $response];
-        });
-
-        $this->clearCache($client);
+        }, ['cache' => ['shared' => new ArrayCache()]]);
 
         $client->sites();
-        $this->assertEquals($counter, 1);
+        $this->assertEquals($counter, 1, 'The first call triggers a request');
         $client->sites();
-        $this->assertEquals($counter, 1);
+        $this->assertEquals($counter, 1, 'The second call does not trigger a request');
     }
 
     /**
@@ -58,6 +58,7 @@ class GetSitesTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function testGetSites()
     {
@@ -75,18 +76,5 @@ class GetSitesTest extends AbstractResourceTest
         });
 
         $this->assertEquals($sites->first()->id(), 'MRD');
-    }
-
-    /**
-     * @param Client $client
-     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
-     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     */
-    protected function clearCache(Client $client)
-    {
-        $client
-            ->make(\Tecnogo\MeliSdk\Entity\Site\Api\GetSites::class)
-            ->cache()
-            ->clear();
     }
 }

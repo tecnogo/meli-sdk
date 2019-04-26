@@ -22,7 +22,6 @@ class CategoryPredictionTest extends AbstractResourceTest
      */
     protected function triggerRequestForErrorResponses(Client $client)
     {
-        $this->clearCache($client);
         $client->predictCategory('jabon nivea');
     }
 
@@ -46,7 +45,7 @@ class CategoryPredictionTest extends AbstractResourceTest
             'categories/MLA403963' => [
                 200, file_get_contents(__DIR__ . '/Fixture/categories_MLA403963.json')
             ]
-        ]);
+        ], ['disable_cache' => true]);
 
         $prediction = $client->predictCategory('kawasaki klr 650');
 
@@ -63,18 +62,5 @@ class CategoryPredictionTest extends AbstractResourceTest
         $this->assertEquals($prediction->parent()->predictionProbability(), 0.411462213);
         $this->assertInstanceOf(Category::class, $prediction->parent()->category());
         $this->assertEquals($prediction->parent()->category()->id(), 'MLA403963');
-    }
-
-    /**
-     * @param Client $client
-     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
-     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     */
-    protected function clearCache(Client $client)
-    {
-        $client
-            ->make(\Tecnogo\MeliSdk\Entity\Category\Api\GetCategoryPrediction::class)
-            ->cache()
-            ->clear();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Tecnogo\MeliSdk\Test\Resource\ListingType;
 
+use Symfony\Component\Cache\Simple\ArrayCache;
 use Tecnogo\MeliSdk\Client;
 use Tecnogo\MeliSdk\Config\SiteId;
 use Tecnogo\MeliSdk\Entity\ListingType\Collection;
@@ -21,10 +22,10 @@ class GetListingTypesTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     protected function triggerRequestForErrorResponses(Client $client)
     {
-        $this->clearCache($client);
         $client->listingTypes();
     }
 
@@ -34,6 +35,7 @@ class GetListingTypesTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function testGetCurrentSiteListingTypes()
     {
@@ -41,7 +43,6 @@ class GetListingTypesTest extends AbstractResourceTest
         $currenciesFromFile = json_decode($response);
 
         $client = $this->getClientWithFixedGetResponse(200, $response);
-        $this->clearCache($client);
 
         $listingTypes = $client->listingTypes();
 
@@ -60,6 +61,7 @@ class GetListingTypesTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function testGetAnotherSiteListingTypes()
     {
@@ -68,9 +70,7 @@ class GetListingTypesTest extends AbstractResourceTest
 
         $client = $this->getClientWithMapGetResponse([
             'sites/MLB/listing_types' => [200, $response]
-        ]);
-
-        $this->clearCache($client);
+        ], ['disable_cache' => true]);
 
         $listingTypes = $client->listingTypes(new SiteId('MLB'));
 
@@ -89,35 +89,21 @@ class GetListingTypesTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function testRequestCache()
     {
         $response = file_get_contents(__DIR__ . '/Fixture/listing_types.json');
         $counter = 0;
 
-        $client = $this->getClientWithCallbackGetResponse(function() use ($response, &$counter) {
+        $client = $this->getClientWithCallbackGetResponse(function () use ($response, &$counter) {
             $counter++;
             return [200, $response];
-        });
-
-        $this->clearCache($client);
+        }, ['cache' => ['shared' => new ArrayCache()]]);
 
         $client->listingTypes();
         $this->assertEquals($counter, 1);
         $client->listingTypes();
         $this->assertEquals($counter, 1);
-    }
-
-    /**
-     * @param Client $client
-     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
-     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     */
-    protected function clearCache(Client $client): void
-    {
-        $client
-            ->make(\Tecnogo\MeliSdk\Entity\ListingType\Api\GetListingTypes::class)
-            ->cache()
-            ->clear();
     }
 }

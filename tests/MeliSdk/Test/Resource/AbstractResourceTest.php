@@ -147,6 +147,7 @@ abstract class AbstractResourceTest extends TestCase
      */
     protected function createClientForResponseErrorTest($httpCode, $response)
     {
-        return $this->getClientWithFixedGetResponse($httpCode, $response);
+        // FIXME remove disable_cache
+        return $this->getClientWithFixedGetResponse($httpCode, $response, ['disable_cache' => true]);
     }
 }

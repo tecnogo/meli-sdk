@@ -10,7 +10,6 @@ use Tecnogo\MeliSdk\Config\SiteId;
 use Tecnogo\MeliSdk\Entity\Site\Api\GetSites;
 use Tecnogo\MeliSdk\Exception\ContainerException;
 use Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException;
-use Tecnogo\MeliSdk\Site\Site;
 
 /**
  * Class Client
@@ -91,6 +90,7 @@ final class Client
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws Exception\MissingConfigurationException
+     * @throws Cache\Exception\InvalidCacheStrategy
      */
     public function exec($actionClass, $parameters = [])
     {
@@ -109,16 +109,29 @@ final class Client
      * @throws Exception\MissingConfigurationException
      * @throws Request\Exception\RequestException
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws Cache\Exception\InvalidCacheStrategy
      */
     public function sites()
     {
         return \Tecnogo\MeliSdk\Entity\Site\Collection::make($this->exec(GetSites::class), function ($site) {
-            return $this->lazyEntity(
-                \Tecnogo\MeliSdk\Entity\Site\Site::class,
-                \Tecnogo\MeliSdk\Entity\Site\Api\GetSite::class,
-                $site['id']
-            );
+            return $this->site($site['id']);
         });
+    }
+
+    /**
+     * @param string|SiteId $siteId
+     * @return Entity\Site\Collection
+     * @throws ContainerException
+     * @throws Exception\MissingConfigurationException
+     * @throws InvalidSiteIdException
+     */
+    public function site($siteId)
+    {
+        return $this->lazyEntity(
+            \Tecnogo\MeliSdk\Entity\Site\Site::class,
+            \Tecnogo\MeliSdk\Entity\Site\Api\GetSite::class,
+            $siteId instanceof SiteId ? $siteId : new SiteId($siteId)
+        );
     }
 
     /**
@@ -159,6 +172,7 @@ final class Client
      * @throws Exception\MissingConfigurationException
      * @throws Request\Exception\RequestException
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws Cache\Exception\InvalidCacheStrategy
      */
     public function categories(SiteId $siteId = null)
     {
@@ -190,6 +204,7 @@ final class Client
      * @throws Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws Cache\Exception\InvalidCacheStrategy
      */
     public function currencies()
     {
@@ -203,6 +218,7 @@ final class Client
      * @throws Exception\MissingConfigurationException
      * @throws Request\Exception\RequestException
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws Cache\Exception\InvalidCacheStrategy
      */
     public function listingTypes(SiteId $siteId = null)
     {
@@ -242,6 +258,7 @@ final class Client
      * @throws Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws Cache\Exception\InvalidCacheStrategy
      */
     public function predictCategory($search)
     {
@@ -306,13 +323,7 @@ final class Client
      */
     private function createConfig(array $options = [])
     {
-        $this->config = (new Config())
-            ->setAppId($options['app_id'] ?? null)
-            ->setAppSecret($options['app_secret'] ?? null)
-            ->setAccessToken($options['access_token'] ?? null)
-            ->setSiteId($options['site_id'] ?? Site::MLA)
-            ->setRedirectUrl($options['redirect_url'] ?? null)
-            ->setApiUrl($options['api_url'] ?? 'https://api.mercadolibre.com/');
+        $this->config = new Config($options);
     }
 
     /**
@@ -375,5 +386,10 @@ final class Client
         $this->auth->login($code);
 
         return $this;
+    }
+
+    public function clearCache()
+    {
+
     }
 }

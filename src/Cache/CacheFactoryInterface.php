@@ -1,7 +1,6 @@
 <?php
 
-namespace Tecnogo\MeliSdk\Client;
-
+namespace Tecnogo\MeliSdk\Cache;
 
 use Psr\SimpleCache\CacheInterface;
 
@@ -14,8 +13,7 @@ interface CacheFactoryInterface
 {
     /**
      * @param $namespace
-     * @param int|null $ttl
      * @return CacheInterface
      */
-    public function get($namespace, $ttl = null);
+    public function get($namespace);
 }

@@ -51,9 +51,9 @@ interface Action
     public function handleException(\Exception $e);
 
     /**
-     * @return CacheInterface
+     * @return string
      */
-    public function cache();
+    public function getCacheStrategy();
 
     /**
      * @return string

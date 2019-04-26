@@ -2,9 +2,8 @@
 
 namespace Tecnogo\MeliSdk\Test\Api\Fixture;
 
-use Psr\SimpleCache\CacheInterface;
-use Symfony\Component\Cache\Simple\NullCache;
 use Tecnogo\MeliSdk\Api\Action;
+use Tecnogo\MeliSdk\Cache\CacheStrategy;
 
 class RequiresAppIdMethodAction implements Action
 {
@@ -68,11 +67,11 @@ class RequiresAppIdMethodAction implements Action
     }
 
     /**
-     * @return CacheInterface
+     * @return string
      */
-    public function cache()
+    public function getCacheStrategy()
     {
-        return new NullCache();
+        return CacheStrategy::NO_CACHE;
     }
 
     /**

@@ -18,7 +18,6 @@ class GetPictureTest extends AbstractResourceTest
      */
     protected function triggerRequestForErrorResponses(Client $client)
     {
-        $this->clearCache($client);
         $client->picture('wubba_lubba_dub')->raw();
     }
 
@@ -32,7 +31,7 @@ class GetPictureTest extends AbstractResourceTest
     {
         $client = $this->getClientWithCallbackGetResponse(function () {
             throw new \Exception('request_triggered');
-        });
+        }, ['disable_cache' => true]);
 
         $item = $client->picture('wubba_lubba_dub');
 
@@ -40,18 +39,5 @@ class GetPictureTest extends AbstractResourceTest
 
         $this->expectExceptionMessage('request_triggered');
         $item->raw();
-    }
-
-    /**
-     * @param Client $client
-     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
-     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     */
-    protected function clearCache(Client $client)
-    {
-        $client
-            ->make(\Tecnogo\MeliSdk\Entity\Picture\Api\GetRawPicture::class, ['id' => -1])
-            ->cache()
-            ->clear();
     }
 }

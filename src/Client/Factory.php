@@ -5,6 +5,7 @@ namespace Tecnogo\MeliSdk\Client;
 use Illuminate\Contracts\Container\Container;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Component\Cache\Simple\FilesystemCache;
+use Tecnogo\MeliSdk\Cache\CacheFactory;
 use Tecnogo\MeliSdk\Config\AccessToken;
 use Tecnogo\MeliSdk\Config\AppId;
 use Tecnogo\MeliSdk\Config\AppSecret;

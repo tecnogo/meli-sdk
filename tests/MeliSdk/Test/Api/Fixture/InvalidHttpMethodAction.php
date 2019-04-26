@@ -2,9 +2,8 @@
 
 namespace Tecnogo\MeliSdk\Test\Api\Fixture;
 
-use Psr\SimpleCache\CacheInterface;
-use Symfony\Component\Cache\Simple\NullCache;
 use Tecnogo\MeliSdk\Api\Action;
+use Tecnogo\MeliSdk\Cache\CacheStrategy;
 
 class InvalidHttpMethodAction implements Action
 {
@@ -69,18 +68,18 @@ class InvalidHttpMethodAction implements Action
     }
 
     /**
-     * @return CacheInterface
-     */
-    public function cache()
-    {
-        return new NullCache();
-    }
-
-    /**
      * @return string
      */
     public function getCacheKey()
     {
         return 'wubba_lubba_dub';
+    }
+
+    /**
+     * @return string
+     */
+    public function getCacheStrategy()
+    {
+        return CacheStrategy::NO_CACHE;
     }
 }

@@ -2,6 +2,9 @@
 
 namespace Tecnogo\MeliSdk\Api;
 
+use Psr\SimpleCache\CacheInterface;
+use Symfony\Component\Cache\Simple\NullCache;
+use Tecnogo\MeliSdk\Cache\CacheStrategy;
 use Tecnogo\MeliSdk\Config\Config;
 use Tecnogo\MeliSdk\Client\Factory;
 use Tecnogo\MeliSdk\Request\Delete;
@@ -112,18 +115,15 @@ final class Facade
     /**
      * @param Action $action
      * @return mixed
-     * @throws \Tecnogo\MeliSdk\Request\Exception\InvalidTokenException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\NotFoundException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\BadRequestException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\ForbiddenResourceException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnexpectedHttpResponseCodeException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function exec(Action $action)
     {
-        $cacheKey = $action->getCacheKey();
-        $cache = $action->cache();
+        $cache = $this->getActionCache($action);
+        $cacheKey = $this->getCacheKey($action);
 
         // We cache only the successful requests
         try {
@@ -191,5 +191,35 @@ final class Facade
         }
 
         return $query;
+    }
+
+    /**
+     * @param Action $action
+     * @return CacheInterface
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
+     */
+    private function getActionCache(Action $action)
+    {
+        $cacheStrategy = $action->getCacheStrategy();
+
+        if ($cacheStrategy == CacheStrategy::NO_CACHE || $this->config->cacheDisabled()) {
+            return new NullCache();
+        }
+
+        return $this->factory->cache(
+            get_class($action),
+            $this->config->getCacheStrategyTtl($cacheStrategy)
+        );
+    }
+
+    /**
+     * @param Action $action
+     * @return string
+     */
+    public function getCacheKey(Action $action)
+    {
+        return $action->getCacheKey();
     }
 }

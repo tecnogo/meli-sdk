@@ -2,6 +2,7 @@
 
 namespace Tecnogo\MeliSdk\Test\Resource\Currency;
 
+use Symfony\Component\Cache\Simple\ArrayCache;
 use Tecnogo\MeliSdk\Client;
 use Tecnogo\MeliSdk\Entity\Currency\Collection;
 use Tecnogo\MeliSdk\Entity\Currency\Currency;
@@ -18,10 +19,10 @@ class GetCurrenciesTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     protected function triggerRequestForErrorResponses(Client $client)
     {
-        $this->clearCache($client);
         $client->currencies();
     }
 
@@ -31,6 +32,7 @@ class GetCurrenciesTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function testGetCurrencies()
     {
@@ -38,7 +40,6 @@ class GetCurrenciesTest extends AbstractResourceTest
         $currenciesFromFile = json_decode($response);
 
         $client = $this->getClientWithFixedGetResponse(200, $response);
-        $this->clearCache($client);
 
         $currencies = $client->currencies();
 
@@ -57,6 +58,7 @@ class GetCurrenciesTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function testRequestCache()
     {
@@ -66,26 +68,11 @@ class GetCurrenciesTest extends AbstractResourceTest
         $client = $this->getClientWithCallbackGetResponse(function() use ($response, &$counter) {
             $counter++;
             return [200, $response];
-        });
-
-        $this->clearCache($client);
+        }, ['cache' => ['shared' => new ArrayCache()]]);
 
         $client->currencies();
-        $this->assertEquals($counter, 1);
+        $this->assertEquals($counter, 1, 'The first call triggers a request');
         $client->currencies();
-        $this->assertEquals($counter, 1);
-    }
-
-    /**
-     * @param Client $client
-     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
-     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     */
-    protected function clearCache(Client $client): void
-    {
-        $client
-            ->make(\Tecnogo\MeliSdk\Entity\Currency\Api\GetCurrencies::class)
-            ->cache()
-            ->clear();
+        $this->assertEquals($counter, 1, 'The second call does not trigger a request');
     }
 }

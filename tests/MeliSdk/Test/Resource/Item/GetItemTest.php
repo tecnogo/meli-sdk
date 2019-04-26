@@ -41,7 +41,7 @@ class GetItemTest extends AbstractResourceTest
     {
         $client = $this->getClientWithCallbackGetResponse(function () {
             throw new \Exception('request_triggered');
-        });
+        }, ['disable_cache' => true]);
 
         $item = $client->item('MLA111111112');
 
@@ -61,7 +61,8 @@ class GetItemTest extends AbstractResourceTest
     {
         $client = $this->getClientWithFixedGetResponse(
             200,
-            file_get_contents(__DIR__ . '/Fixture/item_MLA111111111.json')
+            file_get_contents(__DIR__ . '/Fixture/item_MLA111111111.json'),
+            ['disable_cache' => true]
         );
 
         $item = $client->item('MLA111111111');
@@ -88,10 +89,9 @@ class GetItemTest extends AbstractResourceTest
     {
         $client = $this->getClientWithFixedGetResponse(
             200,
-            file_get_contents(__DIR__ . '/Fixture/item_MLA111111111.json')
+            file_get_contents(__DIR__ . '/Fixture/item_MLA111111111.json'),
+            ['disable_cache' => true]
         );
-
-        $this->clearCache($client);
 
         $attributes = $client->item('MLA111111111')->attributes();
 
@@ -177,9 +177,7 @@ class GetItemTest extends AbstractResourceTest
         $client = $this->getClientWithMapGetResponse([
             'items/MLA111111111' => [200, file_get_contents(__DIR__ . '/Fixture/item_MLA111111111.json')],
             'categories/MLA1467' => [200, file_get_contents(__DIR__ . '/Fixture/categories_MLA1467.json')],
-        ]);
-
-        $this->clearCache($client);
+        ], ['disable_cache' => true]);
 
         $item = $client->item('MLA111111111');
 
@@ -198,9 +196,7 @@ class GetItemTest extends AbstractResourceTest
     {
         $client = $this->getClientWithMapGetResponse([
             'items/MLA111111111' => [200, file_get_contents(__DIR__ . '/Fixture/item_MLA111111111.json')]
-        ]);
-
-        $this->clearCache($client);
+        ], ['disable_cache' => true]);
 
         $item = $attributes = $client->item('MLA111111111');
 
@@ -213,18 +209,5 @@ class GetItemTest extends AbstractResourceTest
         });
 
         $item->pictures();
-    }
-
-    /**
-     * @param Client $client
-     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
-     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     */
-    protected function clearCache(Client $client)
-    {
-        $client
-            ->make(\Tecnogo\MeliSdk\Entity\Item\Api\GetRawItem::class, ['id' => -1])
-            ->cache()
-            ->clear();
     }
 }

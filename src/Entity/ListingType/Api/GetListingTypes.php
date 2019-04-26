@@ -3,6 +3,7 @@
 namespace Tecnogo\MeliSdk\Entity\ListingType\Api;
 
 use Tecnogo\MeliSdk\Api\AbstractTemplateAction;
+use Tecnogo\MeliSdk\Cache\CacheStrategy;
 use Tecnogo\MeliSdk\Client\Factory;
 use Tecnogo\MeliSdk\Config\SiteId;
 use Tecnogo\MeliSdk\Entity\ListingType\Collection;
@@ -65,12 +66,10 @@ final class GetListingTypes extends AbstractTemplateAction
     }
 
     /**
-     * @return \Psr\SimpleCache\CacheInterface
-     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
-     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @return string
      */
-    protected function createCache()
+    public function getCacheStrategy()
     {
-        return $this->factory->cache(static::class);
+        return CacheStrategy::FOREVER;
     }
 }

@@ -41,7 +41,7 @@ class ClientGetAutRedirectUrlTest extends TestCase
         $this->assertIsString($redirectUrl);
         $this->assertEquals(
             $redirectUrl,
-            'https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=wubba_lubba_dub'
+            'https://auth.mercadolibre.com/authorization?response_type=code&client_id=wubba_lubba_dub'
         );
     }
 
@@ -63,7 +63,7 @@ class ClientGetAutRedirectUrlTest extends TestCase
         $this->assertIsString($redirectUrl);
         $this->assertEquals(
             $redirectUrl,
-            'https://auth.mercadolibre.com.co/authorization?response_type=code&client_id=wubba_lubba_dub'
+            'https://auth.mercadolibre.com/authorization?response_type=code&client_id=wubba_lubba_dub'
         );
     }
 }

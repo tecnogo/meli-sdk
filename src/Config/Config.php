@@ -2,7 +2,10 @@
 
 namespace Tecnogo\MeliSdk\Config;
 
+use Psr\SimpleCache\CacheInterface;
+use Tecnogo\MeliSdk\Cache\CacheStrategy;
 use Tecnogo\MeliSdk\Exception\MissingConfigurationException;
+use Tecnogo\MeliSdk\Site\Site;
 
 /**
  * Class Client
@@ -37,6 +40,32 @@ final class Config
      * @var ApiUrl
      */
     private $apiUrl;
+    /**
+     * @var array
+     */
+    private $options;
+    /**
+     * @var CacheInterface
+     */
+    private $sharedCache;
+
+    /**
+     * Config constructor.
+     * @param array $options
+     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     */
+    public function __construct(array $options = [])
+    {
+        $this
+            ->setAppId($options['app_id'] ?? null)
+            ->setAppSecret($options['app_secret'] ?? null)
+            ->setAccessToken($options['access_token'] ?? null)
+            ->setSiteId($options['site_id'] ?? Site::MLA)
+            ->setRedirectUrl($options['redirect_url'] ?? null)
+            ->setApiUrl($options['api_url'] ?? 'https://api.mercadolibre.com/');
+
+        $this->options = $options;
+    }
 
     /**
      * @return AppId
@@ -185,5 +214,72 @@ final class Config
         $this->apiUrl = new ApiUrl($apiUrl);
 
         return $this;
+    }
+
+    /**
+     * @param string $path
+     * @param mixed|null $fallback
+     * @return array|mixed|null
+     */
+    protected function get($path, $fallback = null)
+    {
+        $fragments = explode('.', $path);
+        $source = $this->options;
+
+        while (!empty($fragments)) {
+            $target = array_shift($fragments);
+            if (isset($source[$target])) {
+                $source = $source[$target];
+            } else {
+                return $fallback;
+            }
+        }
+
+        return $source;
+    }
+
+    /**
+     * @param string $cacheStrategy
+     * @return int
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
+     */
+    public function getCacheStrategyTtl($cacheStrategy)
+    {
+        CacheStrategy::assert($cacheStrategy);
+
+        return $this->get('cache_ttl.' . strtolower($cacheStrategy)) ??
+            $this->getCacheStrategyDefaultTtl($cacheStrategy);
+    }
+
+    /**
+     * @param string $cacheStrategy
+     * @return int
+     */
+    private function getCacheStrategyDefaultTtl($cacheStrategy)
+    {
+        return [
+            CacheStrategy::BRIEF => 90, // minute and half
+            CacheStrategy::LONG => 60 * 60, // 1 hour
+            CacheStrategy::FOREVER => 60 * 60 * 24 * 12 // 1 year
+        ][$cacheStrategy];
+    }
+
+    /**
+     * @return array|mixed|null
+     */
+    public function cacheDisabled()
+    {
+        return $this->get('disable_cache');
+    }
+
+    /**
+     * @param $namespace
+     * @return CacheInterface|null
+     */
+    public function getCache($namespace)
+    {
+        $caches = $this->get('cache', []);
+
+        return $caches[$namespace] ?? null;
     }
 }

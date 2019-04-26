@@ -2,7 +2,7 @@
 
 namespace Tecnogo\MeliSdk\Api;
 
-use Symfony\Component\Cache\Simple\NullCache;
+use Tecnogo\MeliSdk\Cache\CacheStrategy;
 
 /**
  * Class AbstractTemplateAction
@@ -57,26 +57,18 @@ abstract class AbstractTemplateAction implements Action
     }
 
     /**
-     * @return \Psr\SimpleCache\CacheInterface
-     */
-    public function cache()
-    {
-        return $this->cache ?? $this->cache = $this->createCache();
-    }
-
-    /**
-     * @return \Psr\SimpleCache\CacheInterface
-     */
-    protected function createCache()
-    {
-        return new NullCache();
-    }
-
-    /**
      * @return string
      */
     public function getCacheKey()
     {
         return md5($this->getMethod() . $this->getResource() . json_encode($this->getPayload()));
+    }
+
+    /**
+     * @return string
+     */
+    public function getCacheStrategy()
+    {
+        return CacheStrategy::NO_CACHE;
     }
 }

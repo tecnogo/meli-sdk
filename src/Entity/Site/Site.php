@@ -112,4 +112,14 @@ final class Site extends AbstractEntity
     {
         return $this->client->listingTypes($this->id());
     }
+
+    /**
+     * @return Settings
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     */
+    public function settings()
+    {
+        return $this->client->make(Settings::class)->hydrate($this->get('settings'));
+    }
 }

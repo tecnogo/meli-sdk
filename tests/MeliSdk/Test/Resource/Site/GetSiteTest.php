@@ -10,6 +10,7 @@ use Tecnogo\MeliSdk\Entity\Currency\Currency;
 use Tecnogo\MeliSdk\Entity\ListingType\ListingType;
 use Tecnogo\MeliSdk\Entity\PaymentMethod\PaymentMethod;
 use Tecnogo\MeliSdk\Entity\ShippingMethod\ShippingMethod;
+use Tecnogo\MeliSdk\Entity\Site\Settings;
 use Tecnogo\MeliSdk\Site\Site;
 use Tecnogo\MeliSdk\Test\Resource\AbstractResourceTest;
 use Tecnogo\MeliSdk\Test\Resource\CreateCallbackResponseGetRequest;
@@ -135,5 +136,29 @@ class GetSiteTest extends AbstractResourceTest
         $this->assertCount(2, $currencies);
         $this->assertInstanceOf(Currency::class, $currencies->last());
         $this->assertEquals($currencies->first()->id(), 'USD');
+    }
+
+    /**
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     */
+    public function testGetSiteSettings()
+    {
+        $client = $this->getClientWithMapGetResponse([
+            'sites/MLA' => [200, file_get_contents(__DIR__ . '/Fixture/site_MLA.json')]
+        ], ['cache' => ['shared' => new ArrayCache()]]);
+
+        $site = $client->site('MLA');
+
+        $settings = $site->settings();
+
+        $this->assertInstanceOf(Settings::class, $settings);
+        $this->assertIsArray($settings->identificationTypeRules());
+        $this->assertCount(2, $settings->identificationTypeRules());
+        $this->assertIsArray($settings->taxpayerTypes());
+        $this->assertCount(4, $settings->taxpayerTypes());
+        $this->assertIsArray($settings->identificationTypes());
+        $this->assertCount(2, $settings->identificationTypes());
     }
 }

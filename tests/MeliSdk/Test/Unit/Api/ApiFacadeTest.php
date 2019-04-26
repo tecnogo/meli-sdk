@@ -10,8 +10,8 @@ use Tecnogo\MeliSdk\Exception\MissingConfigurationException;
 use Tecnogo\MeliSdk\Request\Exception\UnknownHttpMethodException;
 use Tecnogo\MeliSdk\Test\Resource\CreateMapResponseGetRequest;
 use Tecnogo\MeliSdk\Test\Unit\Api\Fixture\InvalidHttpMethodAction;
-use Tecnogo\MeliSdk\Test\Unit\Api\Fixture\RequiresAppIdMethodAction;
-use Tecnogo\MeliSdk\Test\Unit\Api\Fixture\RequiresAccessTokenMethodAction;
+use Tecnogo\MeliSdk\Test\Unit\Api\Fixture\RequiresAppIdAction;
+use Tecnogo\MeliSdk\Test\Unit\Api\Fixture\RequiresAccessTokenAction;
 use Tecnogo\MeliSdk\Test\Unit\Api\Fixture\VanillaAction;
 
 class ApiFacadeTest extends TestCase
@@ -50,7 +50,7 @@ class ApiFacadeTest extends TestCase
         $this->expectException(MissingConfigurationException::class);
         $this->expectExceptionMessage('Missing configuration: app_id');
 
-        $client->api()->exec($client->make(RequiresAppIdMethodAction::class));
+        $client->api()->exec($client->make(RequiresAppIdAction::class));
     }
 
     /**
@@ -68,7 +68,7 @@ class ApiFacadeTest extends TestCase
         $this->expectException(MissingConfigurationException::class);
         $this->expectExceptionMessage('Missing configuration: access_token');
 
-        $client->api()->exec($client->make(RequiresAccessTokenMethodAction::class));
+        $client->api()->exec($client->make(RequiresAccessTokenAction::class));
     }
 
     /**
@@ -110,7 +110,7 @@ class ApiFacadeTest extends TestCase
             'requires_app_id' => [200, '[]']
         ], ['app_id' => 'blah', 'cache' => ['shared' => $cache]]);
 
-        $action = $client->make(RequiresAppIdMethodAction::class);
+        $action = $client->make(RequiresAppIdAction::class);
 
         $client->api()->exec($action);
 
@@ -140,7 +140,7 @@ class ApiFacadeTest extends TestCase
             'requires_access_token' => [200, '[]']
         ], ['access_token' => 'blaz', 'cache' => ['shared' => $cache]]);
 
-        $action = $client->make(RequiresAccessTokenMethodAction::class);
+        $action = $client->make(RequiresAccessTokenAction::class);
 
         $client->api()->exec($action);
 

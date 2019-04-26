@@ -5,7 +5,7 @@ namespace Tecnogo\MeliSdk\Test\Unit\Api\Fixture;
 use Tecnogo\MeliSdk\Api\Action;
 use Tecnogo\MeliSdk\Cache\CacheStrategy;
 
-class RequiresAccessTokenMethodAction implements Action
+class RequiresAccessTokenAction implements Action
 {
     /**
      * @param array $result

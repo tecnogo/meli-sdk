@@ -8,6 +8,7 @@ use Tecnogo\MeliSdk\Entity\Category\Category;
 use Tecnogo\MeliSdk\Entity\Category\Collection;
 use Tecnogo\MeliSdk\Entity\Currency\Currency;
 use Tecnogo\MeliSdk\Entity\ListingType\ListingType;
+use Tecnogo\MeliSdk\Entity\PaymentMethod\PaymentMethod;
 use Tecnogo\MeliSdk\Entity\ShippingMethod\ShippingMethod;
 use Tecnogo\MeliSdk\Site\Site;
 use Tecnogo\MeliSdk\Test\Resource\AbstractResourceTest;
@@ -167,7 +168,7 @@ class GetSiteTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      */
-    public function testGetSitePaymentMethods()
+    public function testGetSiteShippingMethods()
     {
         $client = $this->getClientWithMapGetResponse([
             'sites/MLA/shipping_methods' => [
@@ -184,5 +185,32 @@ class GetSiteTest extends AbstractResourceTest
         $this->assertInstanceOf(ShippingMethod::class, $shippingMethods->last());
         $this->assertEquals($shippingMethods->first()->id(), 800);
         $this->assertEquals($shippingMethods->first()->name(), 'Rápido a domicilio');
+    }
+
+    /**
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     */
+    public function testGetSitePaymentMethods()
+    {
+        $client = $this->getClientWithMapGetResponse([
+            'sites/MLA/payment_methods' => [
+                200,
+                file_get_contents(__DIR__ . '/Fixture/site_MLA_payment_methods.json')
+            ]
+        ], ['cache' => ['shared' => new ArrayCache()]]);
+
+        $site = $client->site('MLA');
+        $paymentMethods = $site->paymentMethods();
+
+        $this->assertInstanceOf(\Tecnogo\MeliSdk\Entity\PaymentMethod\Collection::class, $paymentMethods);
+        $this->assertCount(24, $paymentMethods);
+        $this->assertInstanceOf(PaymentMethod::class, $paymentMethods->last());
+        $this->assertEquals($paymentMethods->first()->id(), 'visa');
+        $this->assertEquals($paymentMethods->first()->name(), 'Visa');
     }
 }

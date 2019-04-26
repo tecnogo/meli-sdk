@@ -5,6 +5,8 @@ namespace Tecnogo\MeliSdk\Entity\Site;
 use Tecnogo\MeliSdk\Entity\AbstractEntity;
 use Tecnogo\MeliSdk\Entity\Category\Category;
 use Tecnogo\MeliSdk\Entity\Currency\Currency;
+use Tecnogo\MeliSdk\Entity\PaymentMethod\Api\GetSitePaymentMethods;
+use Tecnogo\MeliSdk\Entity\PaymentMethod\PaymentMethod;
 use Tecnogo\MeliSdk\Entity\ShippingMethod\Api\GetSiteShippingMethods;
 use Tecnogo\MeliSdk\Entity\ShippingMethod\ShippingMethod;
 
@@ -78,6 +80,23 @@ final class Site extends AbstractEntity
 
         return \Tecnogo\MeliSdk\Entity\ShippingMethod\Collection::make($rawShippingMethods, function ($shippingMethod) {
             return $this->client->make(ShippingMethod::class)->hydrate($shippingMethod);
+        });
+    }
+
+    /**
+     * @return \Tecnogo\MeliSdk\Entity\PaymentMethod\Collection
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     */
+    public function paymentMethods()
+    {
+        $rawPaymentMethods = $this->client->exec(GetSitePaymentMethods::class, ['siteId' => $this->id()]);
+
+        return \Tecnogo\MeliSdk\Entity\PaymentMethod\Collection::make($rawPaymentMethods, function ($paymentMethod) {
+            return $this->client->make(PaymentMethod::class)->hydrate($paymentMethod);
         });
     }
 

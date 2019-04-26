@@ -1,6 +1,6 @@
 <?php
 
-namespace Tecnogo\MeliSdk\Test\Api\Fixture;
+namespace Tecnogo\MeliSdk\Test\Unit\Api\Fixture;
 
 use Tecnogo\MeliSdk\Api\Action;
 use Tecnogo\MeliSdk\Cache\CacheStrategy;
@@ -21,7 +21,7 @@ class RequiresAppIdMethodAction implements Action
      */
     public function getResource()
     {
-        return 'foo';
+        return 'requires_app_id';
     }
 
     /**
@@ -71,7 +71,7 @@ class RequiresAppIdMethodAction implements Action
      */
     public function getCacheStrategy()
     {
-        return CacheStrategy::NO_CACHE;
+        return CacheStrategy::BRIEF;
     }
 
     /**
@@ -79,6 +79,6 @@ class RequiresAppIdMethodAction implements Action
      */
     public function getCacheKey()
     {
-        return 'wubba_lubba_dub';
+        return 'requires_app_id_cache_key';
     }
 }

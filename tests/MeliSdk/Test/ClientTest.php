@@ -17,45 +17,4 @@ class ClientTest extends TestCase
     {
         $this->assertInstanceOf(Client::class, Client::create());
     }
-
-    /**
-     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
-     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
-     */
-    public function testClientCreationWithInvalidSiteId()
-    {
-        $this->expectException(\Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException::class);
-
-        Client::create([
-            'site_id' => 'MLNZ'
-        ]);
-    }
-
-    /**
-     * @param $siteId
-     * @dataProvider siteIdDataProvider
-     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
-     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
-     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     */
-    public function testClientValidSiteId($siteId)
-    {
-        $client = Client::create([
-            'site_id' => $siteId
-        ]);
-
-        $this->assertEquals($siteId, $client->getConfig()->getSiteId());
-    }
-
-    /**
-     * @return array
-     * @throws \ReflectionException
-     */
-    public function siteIdDataProvider()
-    {
-        return array_map(function($siteId) {
-            return [$siteId];
-        }, Site::all());
-    }
 }

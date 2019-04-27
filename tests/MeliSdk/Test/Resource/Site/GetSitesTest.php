@@ -64,7 +64,7 @@ class GetSitesTest extends AbstractResourceTest
     {
         $client = $this->getClientWithMapGetResponse([
             'sites' => [200, file_get_contents(__DIR__ . '/Fixture/sites.json')]
-        ]);
+        ], ['cache' => ['shared' => new ArrayCache()]]);
 
         $sites = $client->sites();
 

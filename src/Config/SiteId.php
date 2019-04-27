@@ -26,11 +26,7 @@ final class SiteId
      */
     public function __construct($siteId)
     {
-        $siteId = trim($siteId);
-
-        Site::assert($siteId);
-
-        $this->siteId = $siteId;
+        $this->siteId = trim($siteId);
     }
 
     /**

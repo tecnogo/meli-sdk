@@ -2,8 +2,6 @@
 
 namespace Tecnogo\MeliSdk\Config;
 
-use Tecnogo\MeliSdk\Site\Site;
-
 /**
  * Class SiteId
  *
@@ -22,7 +20,6 @@ final class SiteId
      * AppId constructor.
      *
      * @param string $siteId
-     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      */
     public function __construct($siteId)
     {

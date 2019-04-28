@@ -70,7 +70,7 @@ final class Site extends AbstractEntity
         return \Tecnogo\MeliSdk\Entity\Currency\Collection::make(
             $this->get('currencies', []),
             function ($currency) {
-                return $this->client->getFactory()->hydrate(Currency::class, $currency);
+                return $this->client->currency($currency['id']);
             }
         );
     }

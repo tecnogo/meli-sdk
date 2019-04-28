@@ -186,8 +186,6 @@ final class Client
      * @return \Tecnogo\MeliSdk\Entity\Category\Category
      * @throws ContainerException
      * @throws Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
-     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function category($id)
     {
@@ -209,6 +207,21 @@ final class Client
     public function currencies()
     {
         return $this->exec(\Tecnogo\MeliSdk\Entity\Currency\Api\GetCurrencies::class);
+    }
+
+    /**
+     * @param $id
+     * @return \Tecnogo\MeliSdk\Entity\Currency\Currency
+     * @throws ContainerException
+     * @throws Exception\MissingConfigurationException
+     */
+    public function currency($id)
+    {
+        return $this->lazyEntity(
+            \Tecnogo\MeliSdk\Entity\Currency\Currency::class,
+            \Tecnogo\MeliSdk\Entity\Currency\Api\GetCurrency::class,
+            $id
+        );
     }
 
     /**

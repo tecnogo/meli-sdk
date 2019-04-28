@@ -4,12 +4,11 @@ namespace Tecnogo\MeliSdk\Test\Resource\Currency;
 
 use Symfony\Component\Cache\Simple\ArrayCache;
 use Tecnogo\MeliSdk\Client;
-use Tecnogo\MeliSdk\Entity\Currency\Collection;
 use Tecnogo\MeliSdk\Entity\Currency\Currency;
 use Tecnogo\MeliSdk\Test\Resource\AbstractResourceTest;
 use Tecnogo\MeliSdk\Test\Resource\CreateCallbackResponseGetRequest;
 
-class GetCurrenciesTest extends AbstractResourceTest
+class GetCurrencyTest extends AbstractResourceTest
 {
     use CreateCallbackResponseGetRequest;
 
@@ -23,7 +22,7 @@ class GetCurrenciesTest extends AbstractResourceTest
      */
     protected function triggerRequestForErrorResponses(Client $client)
     {
-        $client->currencies();
+        $client->currency('ARS')->raw();
     }
 
     /**
@@ -36,20 +35,17 @@ class GetCurrenciesTest extends AbstractResourceTest
      */
     public function testGetCurrencies()
     {
-        $response = file_get_contents(__DIR__ . '/Fixture/currencies.json');
-        $currenciesFromFile = json_decode($response);
+        $response = file_get_contents(__DIR__ . '/Fixture/currencies_ARS.json');
 
         $client = $this->getClientWithFixedGetResponse(200, $response);
 
-        $currencies = $client->currencies();
+        $currency = $client->currency('ARS');
 
-        $this->assertInstanceOf(Collection::class, $currencies);
-        $this->assertEquals($currencies->count(), count($currenciesFromFile));
+        $this->assertInstanceOf(Currency::class, $currency);
 
-        $this->assertInstanceOf(Currency::class, $currencies->first());
-        $this->assertEquals($currencies->first()->id(), 'ARS');
-        $this->assertEquals($currencies->first()->description(), 'Peso argentino');
-        $this->assertEquals($currencies->first()->symbol(), '$');
+        $this->assertEquals($currency->id(), 'ARS');
+        $this->assertEquals($currency->description(), 'Peso argentino');
+        $this->assertEquals($currency->symbol(), '$');
     }
 
     /**
@@ -62,17 +58,17 @@ class GetCurrenciesTest extends AbstractResourceTest
      */
     public function testRequestCache()
     {
-        $response = file_get_contents(__DIR__ . '/Fixture/currencies.json');
+        $response = file_get_contents(__DIR__ . '/Fixture/currencies_ARS.json');
         $counter = 0;
 
-        $client = $this->getClientWithCallbackGetResponse(function() use ($response, &$counter) {
+        $client = $this->getClientWithCallbackGetResponse(function () use ($response, &$counter) {
             $counter++;
             return [200, $response];
         }, ['cache' => ['shared' => new ArrayCache()]]);
 
-        $client->currencies();
+        $client->currency('ARS')->raw();
         $this->assertEquals($counter, 1, 'The first call triggers a request');
-        $client->currencies();
+        $client->currency('ARS')->raw();
         $this->assertEquals($counter, 1, 'The second call does not trigger a request');
     }
 }

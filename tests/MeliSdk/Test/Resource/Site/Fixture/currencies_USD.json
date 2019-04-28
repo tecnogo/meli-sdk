@@ -1,0 +1,6 @@
+{
+  "id": "USD",
+  "symbol": "U$S",
+  "description": "Dólar",
+  "decimal_places": 2
+}

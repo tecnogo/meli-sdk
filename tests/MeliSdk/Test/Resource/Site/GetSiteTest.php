@@ -126,7 +126,9 @@ class GetSiteTest extends AbstractResourceTest
     public function testGetSiteCurrencies()
     {
         $client = $this->getClientWithMapGetResponse([
-            'sites/MLA' => [200, file_get_contents(__DIR__ . '/Fixture/site_MLA.json')]
+            'currencies/USD' => [200, file_get_contents(__DIR__ . '/Fixture/currencies_USD.json')],
+            'currencies/ARS' => [200, file_get_contents(__DIR__ . '/Fixture/currencies_ARS.json')],
+            'sites/MLA' => [200, file_get_contents(__DIR__ . '/Fixture/site_MLA.json')],
         ], ['cache' => ['shared' => new ArrayCache()]]);
 
         $site = $client->site('MLA');

@@ -139,11 +139,22 @@ final class Site extends AbstractEntity
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      */
     public function url()
     {
         try {
-            return $this->client->exec(GuessSiteUrl::class, ['site' => $this]);
+            $url = $this->client->exec(GuessSiteUrl::class, ['site' => $this]);
+            $categories = $this->categories()->toArray();
+
+            while (!$url && count($categories)) {
+                $url = $this->client->exec(GuessSiteUrl::class, [
+                    'site' => $this,
+                    'category' => array_shift($categories)
+                ]);
+            }
+
+            return $url;
         } catch (NotFoundException $e) {
             return null;
         }

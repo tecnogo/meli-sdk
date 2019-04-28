@@ -4,6 +4,7 @@ namespace Tecnogo\MeliSdk\Entity\Site\Api;
 
 use Tecnogo\MeliSdk\Api\AbstractTemplateAction;
 use Tecnogo\MeliSdk\Cache\CacheStrategy;
+use Tecnogo\MeliSdk\Entity\Category\Category;
 use Tecnogo\MeliSdk\Entity\Site\Site;
 use Tecnogo\MeliSdk\Request\Exception\NotFoundException;
 use Tecnogo\MeliSdk\Request\Method;
@@ -19,14 +20,25 @@ final class GuessSiteUrl extends AbstractTemplateAction
      * @var Site
      */
     private $site;
+    /**
+     * @var Category
+     */
+    private $category;
 
     /**
      * GuessSiteUrl constructor.
      * @param Site $site
+     * @param Category|null $category
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      */
-    public function __construct(Site $site)
+    public function __construct(Site $site, $category = null)
     {
         $this->site = $site;
+        $this->category = $category ?? $this->site->categories()->first();
     }
 
     /**
@@ -85,14 +97,13 @@ final class GuessSiteUrl extends AbstractTemplateAction
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function getPayload()
     {
-        $category = $this->site->categories()->first();
-
         return [
             'limit' => 1,
-            'category' => $category ? $category->id() : null
+            'category' => $this->category->id()
         ];
     }
 

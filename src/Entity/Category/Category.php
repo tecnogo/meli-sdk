@@ -23,6 +23,7 @@ final class Category extends AbstractEntity
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function id()
     {
@@ -35,6 +36,7 @@ final class Category extends AbstractEntity
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function name()
     {
@@ -47,6 +49,7 @@ final class Category extends AbstractEntity
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function permalink()
     {
@@ -59,6 +62,7 @@ final class Category extends AbstractEntity
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function children()
     {
@@ -70,6 +74,7 @@ final class Category extends AbstractEntity
     /**
      * @return AttributeCollection
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
@@ -88,6 +93,7 @@ final class Category extends AbstractEntity
     /**
      * @return Collection
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
@@ -104,6 +110,7 @@ final class Category extends AbstractEntity
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function parent()
     {
@@ -119,6 +126,7 @@ final class Category extends AbstractEntity
     /**
      * @return Settings
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
@@ -133,6 +141,7 @@ final class Category extends AbstractEntity
      * @param null $fallback
      * @return mixed
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException

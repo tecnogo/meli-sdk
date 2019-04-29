@@ -5,6 +5,7 @@ namespace Tecnogo\MeliSdk\Entity\Site;
 use Tecnogo\MeliSdk\Entity\AbstractEntity;
 use Tecnogo\MeliSdk\Entity\Category\Category;
 use Tecnogo\MeliSdk\Entity\Currency\Currency;
+use Tecnogo\MeliSdk\Entity\PaymentMethod\Api\GetSitePaymentMethod;
 use Tecnogo\MeliSdk\Entity\PaymentMethod\Api\GetSitePaymentMethods;
 use Tecnogo\MeliSdk\Entity\PaymentMethod\PaymentMethod;
 use Tecnogo\MeliSdk\Entity\ShippingMethod\Api\GetSiteShippingMethods;
@@ -103,7 +104,15 @@ final class Site extends AbstractEntity
         $rawPaymentMethods = $this->client->exec(GetSitePaymentMethods::class, ['siteId' => $this->id()]);
 
         return \Tecnogo\MeliSdk\Entity\PaymentMethod\Collection::make($rawPaymentMethods, function ($paymentMethod) {
-            return $this->client->make(PaymentMethod::class)->hydrate($paymentMethod);
+            return $this->client->make(PaymentMethod::class, [
+                'sources' => [
+                    $paymentMethod,
+                    $this->client->exec(GetSitePaymentMethod::class, [
+                        'siteId' => $this->id(),
+                        'id' => $paymentMethod['id']
+                    ])
+                ]
+            ]);
         });
     }
 

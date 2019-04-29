@@ -26,4 +26,12 @@ final class ShippingMethod extends AbstractEntity
     {
         return $this->get('name');
     }
+
+    /**
+     * @return string|null
+     */
+    public function companyName()
+    {
+        return $this->get('company_name');
+    }
 }

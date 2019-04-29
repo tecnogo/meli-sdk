@@ -8,6 +8,7 @@ use Tecnogo\MeliSdk\Entity\Currency\Currency;
 use Tecnogo\MeliSdk\Entity\PaymentMethod\Api\GetSitePaymentMethod;
 use Tecnogo\MeliSdk\Entity\PaymentMethod\Api\GetSitePaymentMethods;
 use Tecnogo\MeliSdk\Entity\PaymentMethod\PaymentMethod;
+use Tecnogo\MeliSdk\Entity\ShippingMethod\Api\GetSiteShippingMethod;
 use Tecnogo\MeliSdk\Entity\ShippingMethod\Api\GetSiteShippingMethods;
 use Tecnogo\MeliSdk\Entity\ShippingMethod\ShippingMethod;
 use Tecnogo\MeliSdk\Entity\Site\Api\GuessSiteUrl;
@@ -87,7 +88,15 @@ final class Site extends AbstractEntity
         $rawShippingMethods = $this->client->exec(GetSiteShippingMethods::class, ['siteId' => $this->id()]);
 
         return \Tecnogo\MeliSdk\Entity\ShippingMethod\Collection::make($rawShippingMethods, function ($shippingMethod) {
-            return $this->client->make(ShippingMethod::class)->hydrate($shippingMethod);
+            return $this->client->make(ShippingMethod::class, [
+                'sources' => [
+                    $shippingMethod,
+                    $this->client->exec(GetSiteShippingMethod::class, [
+                        'siteId' => $this->id(),
+                        'id' => $shippingMethod['id']
+                    ])
+                ]
+            ]);
         });
     }
 

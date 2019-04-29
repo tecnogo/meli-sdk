@@ -40,6 +40,10 @@ class GetSiteShippingMethodsTest extends AbstractResourceTest
             'sites/MLA/shipping_methods' => [
                 200,
                 file_get_contents(__DIR__ . '/Fixture/site_MLA_shipping_methods.json')
+            ],
+            'sites/MLA/shipping_methods/800' => [
+                200,
+                file_get_contents(__DIR__ . '/Fixture/site_MLA_shipping_methods_800.json')
             ]
         ], ['cache' => ['shared' => new ArrayCache()]]);
 
@@ -51,5 +55,6 @@ class GetSiteShippingMethodsTest extends AbstractResourceTest
         $this->assertInstanceOf(ShippingMethod::class, $shippingMethods->last());
         $this->assertEquals($shippingMethods->first()->id(), 800);
         $this->assertEquals($shippingMethods->first()->name(), 'Rápido a domicilio');
+        $this->assertEquals($shippingMethods->first()->companyName(), 'Motonorte');
     }
 }

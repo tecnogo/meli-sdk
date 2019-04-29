@@ -1,0 +1,19 @@
+{
+  "id": 800,
+  "name": "Rápido a domicilio",
+  "type": "next_day",
+  "deliver_to": "address",
+  "status": "active",
+  "site_id": "MLA",
+  "free_options": [
+    "country"
+  ],
+  "shipping_modes": [
+    "me2"
+  ],
+  "company_id": 3,
+  "company_name": "Motonorte",
+  "min_time": 6,
+  "max_time": 12,
+  "currency_id": "ARS"
+}

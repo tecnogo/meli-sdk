@@ -260,6 +260,7 @@ final class Config
         return [
             CacheStrategy::BRIEF => 90, // minute and half
             CacheStrategy::LONG => 60 * 60, // 1 hour
+            CacheStrategy::DAY => 60 * 60 * 24, // 1 hour
             CacheStrategy::FOREVER => 60 * 60 * 24 * 12 // 1 year
         ][$cacheStrategy];
     }

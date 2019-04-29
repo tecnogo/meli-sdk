@@ -13,12 +13,7 @@ use Tecnogo\MeliSdk\Client;
  */
 abstract class AbstractEntity implements Entity
 {
-    /**
-     * @var string|int
-     */
-    protected $id;
-    protected $source;
-    protected $lazySource;
+    protected $sources = [];
 
     /**
      * @var Client
@@ -29,17 +24,12 @@ abstract class AbstractEntity implements Entity
      * AbstractEntity constructor.
      *
      * @param Client $client
-     * @param array|callable|null $source
-     * @param null $id
+     * @param array $sources
      */
-    public function __construct(Client $client, $source = null, $id = null)
+    public function __construct(Client $client, $sources = [])
     {
         $this->client = $client;
-        $this->id = $id;
-
-        if ($source != null) {
-            $this->setSource($source);
-        }
+        $this->sources = $sources;
     }
 
     /**
@@ -48,7 +38,7 @@ abstract class AbstractEntity implements Entity
      */
     public function hydrate($source)
     {
-        $this->source = $source;
+        $this->sources[] = $source;
 
         return $this;
     }
@@ -58,7 +48,13 @@ abstract class AbstractEntity implements Entity
      */
     public function loaded()
     {
-        return !!$this->source;
+        foreach ($this->sources as $source) {
+            if (is_callable($source)) {
+                return false;
+            }
+        };
+
+        return true;
     }
 
     /**
@@ -77,7 +73,7 @@ abstract class AbstractEntity implements Entity
     {
         $this->lazyLoadIfNeeded();
 
-        return $this->source;
+        return count($this->sources) ? array_merge(...$this->sources) : [];
     }
 
     /**
@@ -87,15 +83,43 @@ abstract class AbstractEntity implements Entity
      */
     protected function get($path, $fallback = null)
     {
-        $fragments = explode('.', $path);
-        $source = $this->raw();
+        foreach ($this->sources as $source) {
+            $result = $this->findInSource($source, $path);
 
-        while (!empty($fragments)) {
-            $target = array_shift($fragments);
-            if (isset($source[$target])) {
-                $source = $source[$target];
-            } else {
-                return $fallback;
+            if ($result !== null) {
+                return $result;
+            }
+        }
+
+        if (!$this->loaded()) {
+            $this->lazyLoadIfNeeded();
+            return $this->get($path, $fallback);
+        }
+
+        return $fallback;
+    }
+
+    /**
+     * @param array|callable $source
+     * @param string $path
+     * @return mixed|null
+     */
+    private function findInSource($source, $path)
+    {
+        $fragments = explode('.', $path);
+
+        if (is_callable($source)) {
+            return null;
+        }
+
+        if (is_array($source)) {
+            while (!empty($fragments)) {
+                $target = array_shift($fragments);
+                if (isset($source[$target])) {
+                    $source = $source[$target];
+                } else {
+                    return null;
+                }
             }
         }
 
@@ -114,24 +138,14 @@ abstract class AbstractEntity implements Entity
     }
 
     /**
-     * @param array|callable $source
+     * Load all pending sources
      */
-    private function setSource($source)
-    {
-        if (is_callable($source)) {
-            $this->lazySource = $source;
-        } else {
-            $this->hydrate($source);
-        }
-
-    }
-
     protected function lazyLoadIfNeeded()
     {
-        $callable = $this->lazySource;
-
-        if (!$this->loaded() && is_callable($callable)) {
-            $this->hydrate($callable());
+        foreach ($this->sources as $index => $source) {
+            if (is_callable($source)) {
+                $this->sources[$index] = $source();
+            }
         }
     }
 

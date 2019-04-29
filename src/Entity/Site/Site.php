@@ -11,7 +11,6 @@ use Tecnogo\MeliSdk\Entity\ShippingMethod\Api\GetSiteShippingMethods;
 use Tecnogo\MeliSdk\Entity\ShippingMethod\ShippingMethod;
 use Tecnogo\MeliSdk\Entity\Site\Api\GuessSiteUrl;
 use Tecnogo\MeliSdk\Request\Exception\NotFoundException;
-use Tecnogo\MeliSdk\Request\Exception\RequestErrorException;
 
 /**
  * Class Site
@@ -25,7 +24,7 @@ final class Site extends AbstractEntity
      */
     public function id()
     {
-        return $this->id ?? $this->get('id');
+        return $this->get('id');
     }
 
     /**
@@ -54,12 +53,11 @@ final class Site extends AbstractEntity
      */
     public function categories()
     {
-        return \Tecnogo\MeliSdk\Entity\Category\Collection::make(
-            $this->get('categories', []),
-            function ($category) {
-                return $this->client->getFactory()->hydrate(Category::class, $category);
-            }
-        );
+        $rawCategories = $this->get('categories', []);
+
+        return \Tecnogo\MeliSdk\Entity\Category\Collection::make($rawCategories, function ($category) {
+            return $this->client->getFactory()->hydrate(Category::class, $category);
+        });
     }
 
     /**

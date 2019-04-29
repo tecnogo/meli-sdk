@@ -7,9 +7,6 @@ use Tecnogo\MeliSdk\Client;
 use Tecnogo\MeliSdk\Entity\Category\Category;
 use Tecnogo\MeliSdk\Entity\Category\Collection;
 use Tecnogo\MeliSdk\Entity\Currency\Currency;
-use Tecnogo\MeliSdk\Entity\ListingType\ListingType;
-use Tecnogo\MeliSdk\Entity\PaymentMethod\PaymentMethod;
-use Tecnogo\MeliSdk\Entity\ShippingMethod\ShippingMethod;
 use Tecnogo\MeliSdk\Entity\Site\Settings;
 use Tecnogo\MeliSdk\Site\Site;
 use Tecnogo\MeliSdk\Test\Resource\AbstractResourceTest;
@@ -102,6 +99,7 @@ class GetSiteTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function testGetSiteCategories()
     {

@@ -144,9 +144,11 @@ final class Client
     {
         return $this
             ->make(\Tecnogo\MeliSdk\Entity\LoggedUser\User::class, [
-                'source' => function () {
-                    return $this->exec(\Tecnogo\MeliSdk\Entity\LoggedUser\Api\GetRawUser::class);
-                }
+                'sources' => [
+                    function () {
+                        return $this->exec(\Tecnogo\MeliSdk\Entity\LoggedUser\Api\GetRawUser::class);
+                    }
+                ]
             ]);
     }
 
@@ -323,10 +325,12 @@ final class Client
     private function lazyEntity($entity, $action, $id)
     {
         return $this->make($entity, [
-            'id' => $id,
-            'source' => function () use ($action, $id) {
-                return $this->exec($action, ['id' => $id]);
-            }
+            'sources' => [
+                ['id' => $id],
+                function () use ($action, $id) {
+                    return $this->exec($action, ['id' => $id]);
+                }
+            ]
         ]);
     }
 

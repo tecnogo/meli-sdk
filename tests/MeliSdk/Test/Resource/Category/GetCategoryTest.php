@@ -2,6 +2,7 @@
 
 namespace Tecnogo\MeliSdk\Test\Resource\Cateogory;
 
+use Symfony\Component\Cache\Simple\NullCache;
 use Tecnogo\MeliSdk\Client;
 use Tecnogo\MeliSdk\Entity\Category\Category;
 use Tecnogo\MeliSdk\Entity\Category\Settings;
@@ -19,7 +20,6 @@ class GetCategoryTest extends AbstractResourceTest
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
-     * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      */
     protected function triggerRequestForErrorResponses(Client $client)
     {
@@ -33,6 +33,7 @@ class GetCategoryTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function testCreationWithIdDoesNotTriggerRequest()
     {
@@ -54,6 +55,7 @@ class GetCategoryTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function testGetCategory()
     {
@@ -77,6 +79,7 @@ class GetCategoryTest extends AbstractResourceTest
      * @throws \Tecnogo\MeliSdk\Exception\MissingConfigurationException
      * @throws \Tecnogo\MeliSdk\Request\Exception\RequestException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     * @throws \Tecnogo\MeliSdk\Cache\Exception\InvalidCacheStrategy
      */
     public function testGetCategoryPath()
     {
@@ -84,7 +87,7 @@ class GetCategoryTest extends AbstractResourceTest
             'categories/MLA4711' => [200, file_get_contents(__DIR__ . '/Fixture/categories_MLA4711.json')],
             'categories/MLA4712' => [200, file_get_contents(__DIR__ . '/Fixture/categories_MLA4712.json')],
             'categories/MLA5725' => [200, file_get_contents(__DIR__ . '/Fixture/categories_MLA5725.json')],
-        ]);
+        ], ['cache' => ['shared' => new NullCache()]]);
 
         $category = $client->category('MLA4712');
 

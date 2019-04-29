@@ -26,4 +26,28 @@ final class PaymentMethod extends AbstractEntity
     {
         return $this->get('name');
     }
+
+    /**
+     * @return string|null
+     */
+    public function thumbnail()
+    {
+        return $this->get('secure_thumbnail');
+    }
+
+    /**
+     * @return array|null
+     */
+    public function payerCosts()
+    {
+        return $this->get('payer_costs', []);
+    }
+
+    /**
+     * @return array|null
+     */
+    public function cardConfiguration()
+    {
+        return $this->get('card_configuration', []);
+    }
 }

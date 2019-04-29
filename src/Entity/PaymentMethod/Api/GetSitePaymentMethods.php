@@ -45,6 +45,6 @@ final class GetSitePaymentMethods extends AbstractTemplateAction
      */
     public function getCacheStrategy()
     {
-        return CacheStrategy::LONG;
+        return CacheStrategy::DAY;
     }
 }

@@ -31,7 +31,7 @@ final class GetSitePaymentMethod extends AbstractTemplateAction
      */
     public function getResource()
     {
-        return 'sites/' . $this->siteId . '/payment_methods';
+        return 'sites/' . $this->siteId . '/payment_methods/' . $this->id;
     }
 
     /**
@@ -47,6 +47,6 @@ final class GetSitePaymentMethod extends AbstractTemplateAction
      */
     public function getCacheStrategy()
     {
-        return CacheStrategy::LONG;
+        return CacheStrategy::DAY;
     }
 }

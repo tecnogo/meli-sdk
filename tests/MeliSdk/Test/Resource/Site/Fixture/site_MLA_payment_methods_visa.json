@@ -1,0 +1,2560 @@
+{
+  "name": "Visa",
+  "id": "visa",
+  "payment_type_id": "credit_card",
+  "card_issuer": {
+    "id": 1,
+    "name": "Visa Argentina S.A."
+  },
+  "site_id": "MLA",
+  "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/visa.gif",
+  "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/visa.gif",
+  "labels": [
+    "recommended_method"
+  ],
+  "total_financial_cost": null,
+  "min_accreditation_days": 0,
+  "max_accreditation_days": 2,
+  "payer_costs": [
+    {
+      "installments": 1,
+      "installment_rate": 0,
+      "installment_rate_collector": [
+        "MERCADOPAGO"
+      ],
+      "labels": [
+        "CFT_0,00%|TEA_0,00%"
+      ],
+      "min_allowed_amount": 0,
+      "max_allowed_amount": 250000
+    },
+    {
+      "installments": 3,
+      "installment_rate": 19.72,
+      "installment_rate_collector": [
+        "MERCADOPAGO"
+      ],
+      "labels": [
+        "CFT_199,44%|TEA_150,35%"
+      ],
+      "min_allowed_amount": 2,
+      "max_allowed_amount": 250000
+    },
+    {
+      "installments": 6,
+      "installment_rate": 34.49,
+      "installment_rate_collector": [
+        "MERCADOPAGO"
+      ],
+      "labels": [
+        "CFT_187,01%|TEA_142,79%",
+        "recommended_interest_installment_with_some_banks"
+      ],
+      "min_allowed_amount": 3,
+      "max_allowed_amount": 250000
+    },
+    {
+      "installments": 9,
+      "installment_rate": 49.19,
+      "installment_rate_collector": [
+        "MERCADOPAGO"
+      ],
+      "labels": [
+        "CFT_176,57%|TEA_136,21%"
+      ],
+      "min_allowed_amount": 2,
+      "max_allowed_amount": 250000
+    },
+    {
+      "installments": 12,
+      "installment_rate": 63.77,
+      "installment_rate_collector": [
+        "MERCADOPAGO"
+      ],
+      "labels": [
+        "recommended_installment",
+        "CFT_167,52%|TEA_130,33%"
+      ],
+      "min_allowed_amount": 6,
+      "max_allowed_amount": 250000
+    }
+  ],
+  "deferred_capture": "supported",
+  "exceptions_by_card_issuer": [
+    {
+      "card_issuer": {
+        "id": 288,
+        "name": "Tarjeta Shopping"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/288.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/288.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        483154
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 310,
+        "name": "Banco Santander Rio S.A."
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/310.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/310.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        486609,
+        448459,
+        486538,
+        450980,
+        450979,
+        493763,
+        462982,
+        415292,
+        441046,
+        474531,
+        485947,
+        450995,
+        405071,
+        466057,
+        429751,
+        429752,
+        411612,
+        411614,
+        411613,
+        448519,
+        400449,
+        490698,
+        433847,
+        490696,
+        469870
+      ],
+      "total_financial_cost": null
+    },
+    {
+      "card_issuer": {
+        "id": 1016,
+        "name": "Banco Ciudad"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/1016.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/1016.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 14.28,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_28,55%|TEA_23,28%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 24,
+          "installment_rate": 29.04,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_29,05%|TEA_23,83%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 36,
+          "installment_rate": 45.98,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_29,94%|TEA_24,69%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 50,
+          "installment_rate": 68.85,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_31,17%|TEA_25,83%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        468531,
+        433810,
+        423669,
+        450815,
+        450842
+      ],
+      "total_financial_cost": null
+    },
+    {
+      "card_issuer": {
+        "id": 1005,
+        "name": "Provencred"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/1005.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/1005.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,00%|TEA_142,78%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        410718,
+        482470
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 282,
+        "name": "Banco Nacion"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/282.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/282.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,43%|TEA_150,34%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        487017,
+        479375,
+        479376,
+        433826,
+        479378,
+        423985
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 294,
+        "name": "Banco Hipotecario"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/294.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/294.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        442015,
+        442014,
+        430495,
+        430496,
+        430497,
+        400103,
+        400104
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 303,
+        "name": "Banco Patagonia"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/303.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/303.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        475393,
+        450833,
+        450832,
+        450994,
+        454644,
+        454643,
+        454645,
+        469701
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 338,
+        "name": "ICBC"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/338.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/338.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        454658,
+        454657,
+        454659,
+        482469,
+        442312,
+        421528
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 1026,
+        "name": "Banco Industrial"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/1026.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/1026.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        456564,
+        456565,
+        456566,
+        489467,
+        485482,
+        462937,
+        486657
+      ],
+      "total_financial_cost": 5.4
+    },
+    {
+      "card_issuer": {
+        "id": 272,
+        "name": "Banco Comafi"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/272.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/272.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        402785,
+        402786,
+        402788,
+        433807,
+        462084
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 326,
+        "name": "HSBC"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/326.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/326.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        450911,
+        450910,
+        455349,
+        459474,
+        469724,
+        433851,
+        425821,
+        490699,
+        492043,
+        492137,
+        469725,
+        425822,
+        465403,
+        465494
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 297,
+        "name": "Macro"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/297.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/297.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        450844,
+        450843,
+        455599,
+        469771,
+        469700,
+        457073,
+        457074,
+        457075,
+        448730,
+        448729,
+        411011,
+        411010
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 286,
+        "name": "Banco San Juan"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/286.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/286.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        492307,
+        492306,
+        498484,
+        433832,
+        493718,
+        486663,
+        477050
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 296,
+        "name": "Itau"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/296.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/296.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        485011,
+        476604,
+        476605,
+        476606,
+        433817
+      ],
+      "total_financial_cost": 3.89
+    },
+    {
+      "card_issuer": {
+        "id": 313,
+        "name": "Banco Supervielle"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/313.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/313.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,43%|TEA_150,34%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,00%|TEA_142,78%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        493768,
+        406997,
+        455196,
+        455197,
+        455198,
+        433822,
+        410378,
+        420061
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 331,
+        "name": "Nuevo Banco de Entre Rios"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/331.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/331.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        456582,
+        456583,
+        456584,
+        485904,
+        493461,
+        463483,
+        463482
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 333,
+        "name": "Nuevo Banco de Santa Fe"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/333.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/333.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        416414,
+        416417,
+        416416,
+        416415,
+        486510,
+        433815,
+        453562
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 287,
+        "name": "Banco Santa Cruz"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/287.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/287.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        456513,
+        446866,
+        424989,
+        421739
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 1043,
+        "name": "Tucuman"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/1043.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/1043.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        457509,
+        450997,
+        450972,
+        491956,
+        484198
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 1044,
+        "name": "Banco Provincia"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/1044.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/1044.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        489321,
+        433833,
+        407119,
+        448478,
+        451275,
+        454832,
+        454850,
+        454846,
+        487053
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 1049,
+        "name": "Banco de La Pampa"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/1049.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/1049.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        454425,
+        454450,
+        454451,
+        462080,
+        462082
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 2033,
+        "name": "Banco Bica"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/2033.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/2033.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,43%|TEA_150,34%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,00%|TEA_142,78%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        481610,
+        481609,
+        478392,
+        463466,
+        463463,
+        463464,
+        465753
+      ],
+      "total_financial_cost": 0
+    },
+    {
+      "card_issuer": {
+        "id": 2040,
+        "name": "Fueguina"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/2040.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/2040.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        407865,
+        487506,
+        424966,
+        424965,
+        424967
+      ],
+      "total_financial_cost": null
+    },
+    {
+      "card_issuer": {
+        "id": 10002,
+        "name": "Banco Columbia"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/10002.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/10002.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        405643,
+        405645,
+        408516
+      ],
+      "total_financial_cost": null
+    },
+    {
+      "card_issuer": {
+        "id": 10004,
+        "name": "Banco Municipal"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/10004.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/10004.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        457056,
+        457055,
+        411828,
+        469737
+      ],
+      "total_financial_cost": null
+    },
+    {
+      "card_issuer": {
+        "id": 10005,
+        "name": "Banco Saenz"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/10005.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/10005.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        494173,
+        494172,
+        494355,
+        449119
+      ],
+      "total_financial_cost": null
+    },
+    {
+      "card_issuer": {
+        "id": 12355,
+        "name": "Efectivo Si"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/12355.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/12355.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        438228,
+        438229,
+        438230
+      ],
+      "total_financial_cost": null
+    },
+    {
+      "card_issuer": {
+        "id": 12366,
+        "name": "Comafi Chicas"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/12366.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/12366.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 3,
+          "installment_rate": 19.72,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_199,44%|TEA_150,35%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 34.49,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_187,01%|TEA_142,79%",
+            "recommended_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        419551
+      ],
+      "total_financial_cost": null
+    },
+    {
+      "card_issuer": {
+        "id": 12385,
+        "name": "Banco Coinag"
+      },
+      "labels": [
+        "recommended_method"
+      ],
+      "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/12385.gif",
+      "secure_thumbnail": "https://www.mercadopago.com/org-img/MP3/API/logos/12385.gif",
+      "payer_costs": [
+        {
+          "installments": 1,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_0,00%|TEA_0,00%"
+          ],
+          "min_allowed_amount": 0,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 6,
+          "installment_rate": 0,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "recommended_installment",
+            "CFT_0,00%|TEA_0,00%",
+            "recommended_no_interest_installment_with_some_banks"
+          ],
+          "min_allowed_amount": 3,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 9,
+          "installment_rate": 49.19,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_176,57%|TEA_136,21%"
+          ],
+          "min_allowed_amount": 2,
+          "max_allowed_amount": 250000
+        },
+        {
+          "installments": 12,
+          "installment_rate": 63.77,
+          "installment_rate_collector": [
+            "MERCADOPAGO"
+          ],
+          "labels": [
+            "CFT_167,52%|TEA_130,33%"
+          ],
+          "min_allowed_amount": 6,
+          "max_allowed_amount": 250000
+        }
+      ],
+      "accepted_bins": [
+        481385,
+        481353,
+        492967,
+        400832
+      ],
+      "total_financial_cost": 0
+    }
+  ],
+  "card_configuration": [
+    {
+      "bin_card_pattern": "^4",
+      "bin_card_exclusion_pattern": "^(476520|473713|473713|473227|444493|410122|405517|402789|417856|448712|453770|434541|411199|423465|434540|434542|434538|423018|488241|489634|434537|434539|434536|427156|427157|434535|434534|434533|423077|434532|434586|423001|434531|411197|443264|400276|400615|402914|404625|405069|434543|416679|405515|405516|405755|405896|405897|406290|406291|406375|406652|406998|406999|408515|410082|410083|410121|410123|410853|411849|417309|421738|423623|428062|428063|428064|434795|437996|439818|442371|442548|444060|446343|446344|446347|450412|450799|451377|451701|451751|451756|451757|451758|451761|451763|451764|451765|451766|451767|451768|451769|451770|451772|451773|457596|457665|462815|463465|468508|473710|473711|473712|473714|473715|473716|473717|473718|473719|473720|473721|473722|473725|477051|477053|481397|481501|481502|481550|483002|483020|483188|489412|492528|499859|446344|446345|446346|400448)",
+      "card_number_length": "16",
+      "security_code_length": 3,
+      "luhn_algorithm": "standard",
+      "installment_bins_pattern": "^4",
+      "additional_info_needed": [
+        "cardholder_name",
+        "cardholder_identification_type",
+        "cardholder_identification_number"
+      ]
+    }
+  ]
+}

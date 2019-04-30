@@ -413,4 +413,18 @@ final class Client
     {
         $this->factory->cache()->clear();
     }
+
+    /**
+     * @param array $values
+     * @return Client
+     * @throws ContainerException
+     * @throws Exception\MissingConfigurationException
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
+    public function warmUp(array $values)
+    {
+        $this->factory->cache()->setMultiple($values);
+
+        return $this;
+    }
 }

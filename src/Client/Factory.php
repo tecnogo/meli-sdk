@@ -97,7 +97,7 @@ class Factory
     protected function setup(array $overrides = [])
     {
         $container = new \Illuminate\Container\Container();
-        $definitions = $this->getDefaultDefinitions() + $overrides;
+        $definitions = $overrides + $this->getDefaultDefinitions();
 
         foreach ($definitions as $abstract => $concrete) {
             $container->bind($abstract, $this->digestSingleDefinition($concrete));

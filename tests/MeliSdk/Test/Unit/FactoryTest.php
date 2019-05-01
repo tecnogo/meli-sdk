@@ -2,6 +2,8 @@
 
 namespace Tecnogo\MeliSdk\Test\Unit;
 
+use Psr\SimpleCache\CacheInterface;
+use Symfony\Component\Cache\Simple\NullCache;
 use Tecnogo\MeliSdk\Client;
 use Tecnogo\MeliSdk\Config\AccessToken;
 use Tecnogo\MeliSdk\Config\AppId;
@@ -91,7 +93,7 @@ class FactoryTest extends TestCase
      * @throws \Tecnogo\MeliSdk\Exception\ContainerException
      * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
      */
-    public function testOverridingDefinitions()
+    public function testAddingDefinitions()
     {
         $client = Client::create([
             'definitions' => [
@@ -102,5 +104,23 @@ class FactoryTest extends TestCase
         $factory = $client->getFactory();
 
         $this->assertInstanceOf(EmptyClassB::class, $factory->make(EmptyClassA::class));
+    }
+
+    /**
+     * @throws MissingConfigurationException
+     * @throws \Tecnogo\MeliSdk\Exception\ContainerException
+     * @throws \Tecnogo\MeliSdk\Site\Exception\InvalidSiteIdException
+     */
+    public function testOverridingDefinitions()
+    {
+        $client = Client::create([
+            'definitions' => [
+                CacheInterface::class => NullCache::class
+            ]
+        ]);
+
+        $factory = $client->getFactory();
+
+        $this->assertInstanceOf(NullCache::class, $factory->make(CacheInterface::class));
     }
 }
